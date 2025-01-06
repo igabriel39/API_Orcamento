@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API_Orcamento")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd995d9b5a316310182e280e4ec108754d7367ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("API_Orcamento")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API_Orcamento")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
