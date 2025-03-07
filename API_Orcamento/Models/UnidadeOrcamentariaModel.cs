@@ -1,11 +1,25 @@
-﻿namespace API_Orcamento.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace API_Orcamento.Models
 {
     public class UnidadeOrcamentariaModel
     {
+        // Anotação para chave primária e auto incremento
+        [Key]
         private int id;
+
+        // Anotação para campo ser not null
+        [Required]
         private int codigo;
+
+        // Anotação para campo ser not null
+        [Required]
         private string nome;
+
+        // Anotação para campo ser not null
+        [Required]
         private DateTime dtCadastro;
+
         private DateTime? dtUltimaAlteracao;
 
         public int Id { get => id; set => id = value; }
