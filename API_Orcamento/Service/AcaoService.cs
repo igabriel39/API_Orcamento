@@ -3,6 +3,7 @@ using API_Orcamento.Repository.Interfaces;
 using API_Orcamento.Rest.Dto;
 using API_Orcamento.Rest.Form;
 using AutoMapper;
+using System.Runtime.Intrinsics.X86;
 
 namespace API_Orcamento.Service
 {
@@ -37,12 +38,18 @@ namespace API_Orcamento.Service
             try
             {
                 AcaoModel acaoModel = await _acaoRepository.BuscarPorId(id);
-
-                return _mapper.Map<AcaoDto>(acaoModel);
+                if (acaoModel == null)
+                {
+                    throw new Exception($"Ação não encontrada para o ID: {id}");
+                }
+                else
+                {
+                    return _mapper.Map<AcaoDto>(acaoModel);
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Ação não encontrada para o ID: {id}!");
+                throw new Exception($"Não foi possível consultar a Ação para o ID: {id}!");
             }
         }
 
@@ -51,6 +58,7 @@ namespace API_Orcamento.Service
             try
             {
                 AcaoModel acaoCadastrada = _mapper.Map<AcaoModel>(acaoForm);
+                acaoCadastrada.DtCadastro = DateTime.Now;
 
                 acaoCadastrada = await _acaoRepository.AdicionarAcao(acaoCadastrada);
                 return _mapper.Map<AcaoDto>(acaoCadastrada);
@@ -58,6 +66,55 @@ namespace API_Orcamento.Service
             catch (Exception ex)
             {
                 throw new Exception("Falha ao cadastrar a Ação desejada!");
+            }
+        }
+
+        public async Task<AcaoDto> Atualizar(AcaoForm acaoForm, int id)
+        {
+            try
+            {
+                AcaoModel acaoExistente = await _acaoRepository.BuscarPorId(id);
+                if (acaoExistente == null)
+                {
+                    throw new Exception($"Ação não encontrada para o ID: {id}");
+                }
+                else 
+                {
+                    AcaoModel acaoAtualizada = acaoExistente;
+                    acaoAtualizada.Codigo = acaoForm.Codigo;
+                    acaoAtualizada.Nome = acaoForm.Nome;
+                    acaoAtualizada.DtUltimaAlteracao = DateTime.Now;
+                    acaoAtualizada = await _acaoRepository.AtualizarAcao(acaoAtualizada);
+                    return _mapper.Map<AcaoDto>(acaoAtualizada);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha ao atualizar a Ação desejada!");
+            }
+        }
+
+        public async Task Apagar(int id)
+        {
+            try
+            {
+                AcaoModel acaoExistente = await _acaoRepository.BuscarPorId(id);
+                if (acaoExistente == null)
+                {
+                    throw new Exception($"Ação não encontrada para o ID: {id}");
+                }
+                else
+                {
+                    bool apagou = await _acaoRepository.ApagarAcao(acaoExistente);
+                    if (!apagou)
+                    {
+                        throw new Exception("Não foi possível apagar a Ação!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Falha ao apagar a Ação desejada!");
             }
         }
     }

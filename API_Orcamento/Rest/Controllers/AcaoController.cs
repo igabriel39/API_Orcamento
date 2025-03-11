@@ -1,6 +1,7 @@
 ﻿using API_Orcamento.Rest.Dto;
 using API_Orcamento.Rest.Form;
 using API_Orcamento.Service;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Orcamento.Rest.Controllers
@@ -35,6 +36,20 @@ namespace API_Orcamento.Rest.Controllers
         {
             AcaoDto acaoCadastrada = await _acaoService.Cadastrar(acaoForm);
             return Ok(acaoCadastrada);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<AcaoDto>> Atualizar([FromBody] AcaoForm acaoForm, int id)
+        {
+            AcaoDto acaoAtualizada = await _acaoService.Atualizar(acaoForm, id);
+            return Ok(acaoAtualizada);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Apagar(int id)
+        {
+            await _acaoService.Apagar(id);
+            return Ok();
         }
     }
 }
