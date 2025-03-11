@@ -1,4 +1,7 @@
 using API_Orcamento.Models;
+using API_Orcamento.Repository;
+using API_Orcamento.Repository.Interfaces;
+using API_Orcamento.Service;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +18,16 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<_DbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")
     ));
+
+// Inicialização da dependência do AutoMapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+// Inicialização das dependências dos repositórios e serviços para que sejam injetados nas respectivas camadas que serão usadas
+// Adicionar na region abaixo quando for fazer o CRUD ou necessitar das operações de serviço e repositório
+#region Inicialização das dependências dos repositórios e serviços para que sejam injetados nas respectivas camadas que serão usadas
+builder.Services.AddScoped<IAcaoRepository, AcaoRepository>();
+builder.Services.AddScoped<AcaoService>();
+#endregion
 
 var app = builder.Build();
 
