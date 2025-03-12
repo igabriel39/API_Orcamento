@@ -31,11 +31,10 @@ namespace API_Orcamento.Repository
             return acao;
         }
 
-        public async Task<bool> ApagarAcao(AcaoModel acao)
+        public async Task ApagarAcao(AcaoModel acao)
         {
             _dbContext.tbAcao.Remove(acao);
             await _dbContext.SaveChangesAsync();
-            return true;
         }
 
         public async Task<AcaoModel> AtualizarAcao(AcaoModel acao)

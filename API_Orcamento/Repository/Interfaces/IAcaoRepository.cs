@@ -8,6 +8,6 @@ namespace API_Orcamento.Repository.Interfaces
         Task<AcaoModel> BuscarPorId(int id);
         Task<AcaoModel> AdicionarAcao(AcaoModel acao);
         Task<AcaoModel> AtualizarAcao(AcaoModel acao);
-        Task<bool> ApagarAcao(AcaoModel acao);
+        Task ApagarAcao(AcaoModel acao);
     }
 }

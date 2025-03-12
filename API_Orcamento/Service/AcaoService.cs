@@ -2,6 +2,7 @@
 using API_Orcamento.Repository.Interfaces;
 using API_Orcamento.Rest.Dto;
 using API_Orcamento.Rest.Form;
+using API_Orcamento.Service.Exceptions;
 using AutoMapper;
 using System.Runtime.Intrinsics.X86;
 
@@ -40,12 +41,16 @@ namespace API_Orcamento.Service
                 AcaoModel acaoModel = await _acaoRepository.BuscarPorId(id);
                 if (acaoModel == null)
                 {
-                    throw new Exception($"Ação não encontrada para o ID: {id}");
+                    throw new ObjectNotFound($"Ação não encontrada para o ID: {id}");
                 }
                 else
                 {
                     return _mapper.Map<AcaoDto>(acaoModel);
                 }
+            }
+            catch (ObjectNotFound ex)
+            {
+                throw new ObjectNotFound(ex.Message);
             }
             catch (Exception ex)
             {
@@ -65,7 +70,7 @@ namespace API_Orcamento.Service
             }
             catch (Exception ex)
             {
-                throw new Exception("Falha ao cadastrar a Ação desejada!");
+                throw new Exception("Não foi possível cadastrar a Ação desejada!");
             }
         }
 
@@ -76,7 +81,7 @@ namespace API_Orcamento.Service
                 AcaoModel acaoExistente = await _acaoRepository.BuscarPorId(id);
                 if (acaoExistente == null)
                 {
-                    throw new Exception($"Ação não encontrada para o ID: {id}");
+                    throw new ObjectNotFound($"Ação não encontrada para o ID: {id}");
                 }
                 else 
                 {
@@ -88,9 +93,13 @@ namespace API_Orcamento.Service
                     return _mapper.Map<AcaoDto>(acaoAtualizada);
                 }
             }
+            catch (ObjectNotFound ex)
+            {
+                throw new ObjectNotFound(ex.Message);
+            }
             catch (Exception ex)
             {
-                throw new Exception("Falha ao atualizar a Ação desejada!");
+                throw new Exception("Não foi possível atualizar a Ação desejada!");
             }
         }
 
@@ -101,20 +110,20 @@ namespace API_Orcamento.Service
                 AcaoModel acaoExistente = await _acaoRepository.BuscarPorId(id);
                 if (acaoExistente == null)
                 {
-                    throw new Exception($"Ação não encontrada para o ID: {id}");
+                    throw new ObjectNotFound($"Ação não encontrada para o ID: {id}");
                 }
                 else
                 {
-                    bool apagou = await _acaoRepository.ApagarAcao(acaoExistente);
-                    if (!apagou)
-                    {
-                        throw new Exception("Não foi possível apagar a Ação!");
-                    }
+                    await _acaoRepository.ApagarAcao(acaoExistente); 
                 }
+            }
+            catch (ObjectNotFound ex)
+            {
+                throw new ObjectNotFound(ex.Message);
             }
             catch (Exception ex)
             {
-                throw new Exception("Falha ao apagar a Ação desejada!");
+                throw new Exception("Não foi possível apagar a Ação desejada!");
             }
         }
     }
