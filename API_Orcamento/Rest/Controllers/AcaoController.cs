@@ -17,6 +17,12 @@ namespace API_Orcamento.Rest.Controllers
             _acaoService = acaoService;
         }
 
+        /// <summary>
+        /// Lista todas as Ações
+        /// </summary>
+        /// <returns></returns>
+        /// <response code = "200">Retorna as Ações cadastradas</response>>
+        /// <response code = "500">Erro Interno no Servidor</response>>
         [HttpGet]
         public async Task<ActionResult<List<AcaoDto>>> BuscarTodos()
         {
@@ -24,6 +30,12 @@ namespace API_Orcamento.Rest.Controllers
             return Ok(acaoDtos);
         }
 
+        /// <summary>
+        /// Lista a Ação pelo id informado
+        /// </summary>
+        /// <returns></returns>
+        /// <response code = "200">Ação cadastrada com sucesso</response>>
+        /// <response code = "500">Erro Interno no Servidor</response>>
         [HttpGet("{id}")]
         public async Task<ActionResult<AcaoDto>> BuscarPorId(int id)
         {
@@ -31,24 +43,27 @@ namespace API_Orcamento.Rest.Controllers
             return Ok(acaoDto);
         }
 
+        /// <summary>
+        /// Cadastra a Ação
+        /// </summary>
+        /// <returns></returns>
+        /// <response code = "200">Ação cadastrada com sucesso</response>>
+        /// <response code = "400">Requisição enviada inválida</response>>
+        /// <response code = "500">Erro Interno no Servidor</response>>
         [HttpPost]
         public async Task<ActionResult<AcaoDto>> Cadastrar([FromBody] AcaoForm acaoForm)
         {
-            if (!ModelState.IsValid)
-            {
-                // Caso não seja válido, lance uma exceção com as mensagens de erro
-                var erros = ModelState.Values
-                    .SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-
-                throw new InvalidOperationException($"Erro de validação: {string.Join(", ", erros)}");
-            }
-
             AcaoDto acaoCadastrada = await _acaoService.Cadastrar(acaoForm);
             return Ok(acaoCadastrada);
         }
 
+        /// <summary>
+        /// Atualiza a Ação pelo id informado
+        /// </summary>
+        /// <returns></returns>
+        /// <response code = "200">Ação atualizada com sucesso</response>>
+        /// <response code = "400">Requisição enviada inválida</response>>
+        /// <response code = "500">Erro Interno no Servidor</response>>
         [HttpPut("{id}")]
         public async Task<ActionResult<AcaoDto>> Atualizar([FromBody] AcaoForm acaoForm, int id)
         {
@@ -56,6 +71,12 @@ namespace API_Orcamento.Rest.Controllers
             return Ok(acaoAtualizada);
         }
 
+        /// <summary>
+        /// Apaga a Ação pelo id informado
+        /// </summary>
+        /// <returns></returns>
+        /// <response code = "200">Ação apagada com sucesso</response>>
+        /// <response code = "500">Erro Interno no Servidor</response>>
         [HttpDelete("{id}")]
         public async Task<ActionResult> Apagar(int id)
         {

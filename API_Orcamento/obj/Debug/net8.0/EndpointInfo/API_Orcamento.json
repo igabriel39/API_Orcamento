@@ -10,9 +10,10 @@
         "tags": [
           "Acao"
         ],
+        "summary": "Lista todas as Ações",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Retorna as Ações cadastradas",
             "content": {
               "text/plain": {
                 "schema": {
@@ -39,6 +40,9 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
           }
         }
       },
@@ -46,6 +50,7 @@
         "tags": [
           "Acao"
         ],
+        "summary": "Cadastra a Ação",
         "requestBody": {
           "content": {
             "application/json": {
@@ -67,7 +72,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Ação cadastrada com sucesso",
             "content": {
               "text/plain": {
                 "schema": {
@@ -85,6 +90,12 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
           }
         }
       }
@@ -94,6 +105,7 @@
         "tags": [
           "Acao"
         ],
+        "summary": "Lista a Ação pelo id informado",
         "parameters": [
           {
             "name": "id",
@@ -107,7 +119,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Ação cadastrada com sucesso",
             "content": {
               "text/plain": {
                 "schema": {
@@ -125,6 +137,9 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
           }
         }
       },
@@ -132,6 +147,7 @@
         "tags": [
           "Acao"
         ],
+        "summary": "Atualiza a Ação",
         "parameters": [
           {
             "name": "id",
@@ -164,7 +180,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Ação atualizada com sucesso",
             "content": {
               "text/plain": {
                 "schema": {
@@ -182,6 +198,12 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
           }
         }
       },
@@ -189,6 +211,7 @@
         "tags": [
           "Acao"
         ],
+        "summary": "Apaga a Ação",
         "parameters": [
           {
             "name": "id",
@@ -202,7 +225,10 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Ação apagada com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
           }
         }
       }
@@ -229,15 +255,21 @@
         "additionalProperties": false
       },
       "AcaoForm": {
+        "required": [
+          "codigo",
+          "nome"
+        ],
         "type": "object",
         "properties": {
           "codigo": {
+            "maximum": 2147483647,
+            "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
           "nome": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false

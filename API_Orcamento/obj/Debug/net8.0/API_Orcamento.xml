@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API_Orcamento</name>
+    </assembly>
+    <members>
+        <member name="T:API_Orcamento.Migrations.relacionamentos">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.relacionamentos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.relacionamentos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.relacionamentos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API_Orcamento.Migrations.nometabelas">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.nometabelas.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.nometabelas.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.nometabelas.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.AcaoController.BuscarTodos">
+            <summary>
+            Lista todas as Ações
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna as Ações cadastradas</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.AcaoController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista a Ação pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Ação cadastrada com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.AcaoController.Cadastrar(API_Orcamento.Rest.Form.AcaoForm)">
+            <summary>
+            Cadastra a Ação
+            </summary>
+            <returns></returns>
+            <response code = "200">Ação cadastrada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.AcaoController.Atualizar(API_Orcamento.Rest.Form.AcaoForm,System.Int32)">
+            <summary>
+            Atualiza a Ação
+            </summary>
+            <returns></returns>
+            <response code = "200">Ação atualizada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.AcaoController.Apagar(System.Int32)">
+            <summary>
+            Apaga a Ação
+            </summary>
+            <returns></returns>
+            <response code = "200">Ação apagada com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+    </members>
+</doc>

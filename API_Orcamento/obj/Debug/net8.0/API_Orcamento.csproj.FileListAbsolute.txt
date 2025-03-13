@@ -172,3 +172,5 @@ C:\Users\Igor Gabriel\Documents\API_Orcamento\API_Orcamento\bin\Debug\net8.0\tr\
 C:\Users\Igor Gabriel\Documents\API_Orcamento\API_Orcamento\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\Igor Gabriel\Documents\API_Orcamento\API_Orcamento\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\Igor Gabriel\Documents\API_Orcamento\API_Orcamento\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Igor Gabriel\Documents\API_Orcamento\API_Orcamento\bin\Debug\net8.0\API_Orcamento.xml
+C:\Users\Igor Gabriel\Documents\API_Orcamento\API_Orcamento\obj\Debug\net8.0\API_Orcamento.xml

@@ -86,8 +86,8 @@ namespace API_Orcamento.Service
                 else 
                 {
                     AcaoModel acaoAtualizada = acaoExistente;
-                    acaoAtualizada.Codigo = acaoForm.Codigo;
-                    acaoAtualizada.Nome = acaoForm.Nome;
+                    acaoAtualizada.Codigo = acaoForm.codigo;
+                    acaoAtualizada.Nome = acaoForm.nome;
                     acaoAtualizada.DtUltimaAlteracao = DateTime.Now;
                     acaoAtualizada = await _acaoRepository.AtualizarAcao(acaoAtualizada);
                     return _mapper.Map<AcaoDto>(acaoAtualizada);
