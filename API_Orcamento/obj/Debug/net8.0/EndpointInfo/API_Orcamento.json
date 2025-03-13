@@ -119,7 +119,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Ação cadastrada com sucesso",
+            "description": "Retorna a Ação",
             "content": {
               "text/plain": {
                 "schema": {
@@ -147,7 +147,7 @@
         "tags": [
           "Acao"
         ],
-        "summary": "Atualiza a Ação",
+        "summary": "Atualiza a Ação pelo id informado",
         "parameters": [
           {
             "name": "id",
@@ -211,7 +211,7 @@
         "tags": [
           "Acao"
         ],
-        "summary": "Apaga a Ação",
+        "summary": "Apaga a Ação pelo id informado",
         "parameters": [
           {
             "name": "id",
@@ -226,6 +226,234 @@
         "responses": {
           "200": {
             "description": "Ação apagada com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/ElementoDespesa": {
+      "get": {
+        "tags": [
+          "ElementoDespesa"
+        ],
+        "summary": "Lista todas os Elementos Despesas",
+        "responses": {
+          "200": {
+            "description": "Retorna os Elementos Despesas cadastrados",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ElementoDespesaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ElementoDespesaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ElementoDespesaDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ElementoDespesa"
+        ],
+        "summary": "Cadastra o Elemento Despesa",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ElementoDespesaForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ElementoDespesaForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ElementoDespesaForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Elemento Despesa cadastrado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElementoDespesaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElementoDespesaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElementoDespesaDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/ElementoDespesa/{id}": {
+      "get": {
+        "tags": [
+          "ElementoDespesa"
+        ],
+        "summary": "Lista o Elemento Despesa pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o Elemento Despesa",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElementoDespesaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElementoDespesaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElementoDespesaDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ElementoDespesa"
+        ],
+        "summary": "Atualiza o Elemento Despesa pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ElementoDespesaForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ElementoDespesaForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ElementoDespesaForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Elemento Despesa atualizado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElementoDespesaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElementoDespesaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ElementoDespesaDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ElementoDespesa"
+        ],
+        "summary": "Apaga o Elemento Despesa pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Elemento Despesa apagado com sucesso"
           },
           "500": {
             "description": "Erro Interno no Servidor"
@@ -255,6 +483,44 @@
         "additionalProperties": false
       },
       "AcaoForm": {
+        "required": [
+          "codigo",
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ElementoDespesaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ElementoDespesaForm": {
         "required": [
           "codigo",
           "nome"

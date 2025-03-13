@@ -34,6 +34,9 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 #region Inicialização das dependências dos repositórios e serviços para que sejam injetados nas respectivas camadas que serão usadas
 builder.Services.AddScoped<IAcaoRepository, AcaoRepository>();
 builder.Services.AddScoped<AcaoService>();
+
+builder.Services.AddScoped<IElementoDespesaRepository, ElementoDespesaRepository>();
+builder.Services.AddScoped<ElementoDespesaService>();
 #endregion
 
 var app = builder.Build();

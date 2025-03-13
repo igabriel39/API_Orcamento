@@ -41,7 +41,7 @@
             Lista a Ação pelo id informado
             </summary>
             <returns></returns>
-            <response code = "200">Ação cadastrada com sucesso</response>>
+            <response code = "200">Retorna a Ação</response>>
             <response code = "500">Erro Interno no Servidor</response>>
         </member>
         <member name="M:API_Orcamento.Rest.Controllers.AcaoController.Cadastrar(API_Orcamento.Rest.Form.AcaoForm)">
@@ -55,7 +55,7 @@
         </member>
         <member name="M:API_Orcamento.Rest.Controllers.AcaoController.Atualizar(API_Orcamento.Rest.Form.AcaoForm,System.Int32)">
             <summary>
-            Atualiza a Ação
+            Atualiza a Ação pelo id informado
             </summary>
             <returns></returns>
             <response code = "200">Ação atualizada com sucesso</response>>
@@ -64,10 +64,52 @@
         </member>
         <member name="M:API_Orcamento.Rest.Controllers.AcaoController.Apagar(System.Int32)">
             <summary>
-            Apaga a Ação
+            Apaga a Ação pelo id informado
             </summary>
             <returns></returns>
             <response code = "200">Ação apagada com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ElementoDespesaController.BuscarTodos">
+            <summary>
+            Lista todas os Elementos Despesas
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna os Elementos Despesas cadastrados</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ElementoDespesaController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista o Elemento Despesa pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna o Elemento Despesa</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ElementoDespesaController.Cadastrar(API_Orcamento.Rest.Form.ElementoDespesaForm)">
+            <summary>
+            Cadastra o Elemento Despesa
+            </summary>
+            <returns></returns>
+            <response code = "200">Elemento Despesa cadastrado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ElementoDespesaController.Atualizar(API_Orcamento.Rest.Form.ElementoDespesaForm,System.Int32)">
+            <summary>
+            Atualiza o Elemento Despesa pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Elemento Despesa atualizado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ElementoDespesaController.Apagar(System.Int32)">
+            <summary>
+            Apaga o Elemento Despesa pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Elemento Despesa apagado com sucesso</response>>
             <response code = "500">Erro Interno no Servidor</response>>
         </member>
     </members>

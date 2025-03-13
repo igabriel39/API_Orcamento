@@ -117,5 +117,124 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ElementoDespesaController",
+    "Method": "BuscarTodos",
+    "RelativePath": "api/ElementoDespesa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_Orcamento.Rest.Dto.ElementoDespesaDto, API_Orcamento, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ElementoDespesaController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/ElementoDespesa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "elementoDespesaForm",
+        "Type": "API_Orcamento.Rest.Form.ElementoDespesaForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ElementoDespesaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ElementoDespesaController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/ElementoDespesa/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ElementoDespesaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ElementoDespesaController",
+    "Method": "Atualizar",
+    "RelativePath": "api/ElementoDespesa/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "elementoDespesaForm",
+        "Type": "API_Orcamento.Rest.Form.ElementoDespesaForm",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ElementoDespesaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ElementoDespesaController",
+    "Method": "Apagar",
+    "RelativePath": "api/ElementoDespesa/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

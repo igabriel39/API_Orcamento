@@ -34,7 +34,7 @@ namespace API_Orcamento.Rest.Controllers
         /// Lista a Ação pelo id informado
         /// </summary>
         /// <returns></returns>
-        /// <response code = "200">Ação cadastrada com sucesso</response>>
+        /// <response code = "200">Retorna a Ação</response>>
         /// <response code = "500">Erro Interno no Servidor</response>>
         [HttpGet("{id}")]
         public async Task<ActionResult<AcaoDto>> BuscarPorId(int id)

@@ -15,6 +15,9 @@ namespace API_Orcamento.Config
             CreateMap<AcaoModel, AcaoDto>();
             CreateMap<AcaoForm, AcaoModel>();
 
+            CreateMap<ElementoDespesaModel, ElementoDespesaDto>();
+            CreateMap<ElementoDespesaForm, ElementoDespesaModel>();
+
 
         }
     }
