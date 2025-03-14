@@ -460,6 +460,462 @@
           }
         }
       }
+    },
+    "/api/FonteRecurso": {
+      "get": {
+        "tags": [
+          "FonteRecurso"
+        ],
+        "summary": "Lista todas as Fontes Recursos",
+        "responses": {
+          "200": {
+            "description": "Retorna as Fontes Recursos cadastradas",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FonteRecursoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FonteRecursoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FonteRecursoDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "FonteRecurso"
+        ],
+        "summary": "Cadastra a Fonte Recurso",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FonteRecursoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FonteRecursoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FonteRecursoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Fonte Recurso cadastrada com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonteRecursoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonteRecursoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonteRecursoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/FonteRecurso/{id}": {
+      "get": {
+        "tags": [
+          "FonteRecurso"
+        ],
+        "summary": "Lista a Fonte Recurso pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna a Fonte Recurso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonteRecursoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonteRecursoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonteRecursoDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "FonteRecurso"
+        ],
+        "summary": "Atualiza a Fonte Recurso pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FonteRecursoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FonteRecursoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FonteRecursoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Fonte Recurso atualizada com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonteRecursoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonteRecursoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FonteRecursoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "FonteRecurso"
+        ],
+        "summary": "Apaga a Fonte Recurso pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fonte Recurso apagada com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/GrupoDespesa": {
+      "get": {
+        "tags": [
+          "GrupoDespesa"
+        ],
+        "summary": "Lista todas os Grupos Despesas",
+        "responses": {
+          "200": {
+            "description": "Retorna os Grupos Despesas cadastrados",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GrupoDespesaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GrupoDespesaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GrupoDespesaDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "GrupoDespesa"
+        ],
+        "summary": "Cadastra o Grupo Despesa",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GrupoDespesaForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GrupoDespesaForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GrupoDespesaForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Grupo Despesa cadastrado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrupoDespesaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrupoDespesaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrupoDespesaDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/GrupoDespesa/{id}": {
+      "get": {
+        "tags": [
+          "GrupoDespesa"
+        ],
+        "summary": "Lista o Grupo Despesa pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o Grupo Despesa",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrupoDespesaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrupoDespesaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrupoDespesaDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "GrupoDespesa"
+        ],
+        "summary": "Atualiza o Grupo Despesa pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GrupoDespesaForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GrupoDespesaForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GrupoDespesaForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Grupo Despesa atualizado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrupoDespesaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrupoDespesaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrupoDespesaDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "GrupoDespesa"
+        ],
+        "summary": "Apaga o Grupo Despesa pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Grupo Despesa apagado com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -490,7 +946,6 @@
         "type": "object",
         "properties": {
           "codigo": {
-            "maximum": 2147483647,
             "minimum": 1,
             "type": "integer",
             "format": "int32"
@@ -528,10 +983,83 @@
         "type": "object",
         "properties": {
           "codigo": {
-            "maximum": 2147483647,
             "minimum": 1,
             "type": "integer",
             "format": "int32"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FonteRecursoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FonteRecursoForm": {
+        "required": [
+          "codigo",
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GrupoDespesaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "number",
+            "format": "double"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GrupoDespesaForm": {
+        "required": [
+          "codigo",
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "minimum": 1,
+            "type": "number",
+            "format": "double"
           },
           "nome": {
             "minLength": 1,

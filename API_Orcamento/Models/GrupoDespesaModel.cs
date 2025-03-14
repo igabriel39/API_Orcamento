@@ -10,7 +10,7 @@ namespace API_Orcamento.Models
 
         // Anotação para campo ser not null
         [Required]
-        private int codigo;
+        private decimal codigo;
 
         // Anotação para campo ser not null
         [Required]
@@ -23,7 +23,7 @@ namespace API_Orcamento.Models
         private DateTime? dtUltimaAlteracao;
 
         public int Id { get => id; set => id = value; }
-        public int Codigo { get => codigo; set => codigo = value; }
+        public decimal Codigo { get => codigo; set => codigo = value; }
         public string Nome { get => nome; set => nome = value; }
         public DateTime DtCadastro { get => dtCadastro; set => dtCadastro = value; }
         public DateTime? DtUltimaAlteracao { get => dtUltimaAlteracao; set => dtUltimaAlteracao = value; }

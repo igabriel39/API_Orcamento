@@ -18,6 +18,12 @@ namespace API_Orcamento.Config
             CreateMap<ElementoDespesaModel, ElementoDespesaDto>();
             CreateMap<ElementoDespesaForm, ElementoDespesaModel>();
 
+            CreateMap<FonteRecursoModel, FonteRecursoDto>();
+            CreateMap<FonteRecursoForm, FonteRecursoModel>();
+
+            CreateMap<GrupoDespesaModel, GrupoDespesaDto>();
+            CreateMap<GrupoDespesaForm, GrupoDespesaModel>();
+
 
         }
     }

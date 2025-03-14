@@ -2,12 +2,12 @@
 
 namespace API_Orcamento.Rest.Form
 {
-    public class ElementoDespesaForm
+    public class FonteRecursoForm
     {
-        [Required(ErrorMessage = "O código do Elemento Despesa é obrigatório!")]
+        [Required(ErrorMessage = "O código da Fonte Recurso é obrigatório!")]
         [Range(1, double.MaxValue, ErrorMessage = "o código deve ser diferente de zero!")]
         public int codigo { get; set; }
-        [Required(ErrorMessage = "O nome do Elemento Despesa é obrigatório!", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "O nome da Fonte Recurso é obrigatório!", AllowEmptyStrings = false)]
         public string nome { get; set; }
     }
 }

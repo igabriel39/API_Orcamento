@@ -37,6 +37,12 @@ builder.Services.AddScoped<AcaoService>();
 
 builder.Services.AddScoped<IElementoDespesaRepository, ElementoDespesaRepository>();
 builder.Services.AddScoped<ElementoDespesaService>();
+
+builder.Services.AddScoped<IFonteRecursoRepository, FonteRecursoRepository>();
+builder.Services.AddScoped<FonteRecursoService>();
+
+builder.Services.AddScoped<IGrupoDespesaRepository, GrupoDespesaRepository>();
+builder.Services.AddScoped<GrupoDespesaService>();
 #endregion
 
 var app = builder.Build();

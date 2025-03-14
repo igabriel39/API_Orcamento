@@ -28,6 +28,18 @@
         <member name="M:API_Orcamento.Migrations.nometabelas.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:API_Orcamento.Migrations.campoCodigoDecimal">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.campoCodigoDecimal.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.campoCodigoDecimal.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.campoCodigoDecimal.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="M:API_Orcamento.Rest.Controllers.AcaoController.BuscarTodos">
             <summary>
             Lista todas as Ações
@@ -110,6 +122,90 @@
             </summary>
             <returns></returns>
             <response code = "200">Elemento Despesa apagado com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.FonteRecursoController.BuscarTodos">
+            <summary>
+            Lista todas as Fontes Recursos
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna as Fontes Recursos cadastradas</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.FonteRecursoController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista a Fonte Recurso pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna a Fonte Recurso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.FonteRecursoController.Cadastrar(API_Orcamento.Rest.Form.FonteRecursoForm)">
+            <summary>
+            Cadastra a Fonte Recurso
+            </summary>
+            <returns></returns>
+            <response code = "200">Fonte Recurso cadastrada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.FonteRecursoController.Atualizar(API_Orcamento.Rest.Form.FonteRecursoForm,System.Int32)">
+            <summary>
+            Atualiza a Fonte Recurso pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Fonte Recurso atualizada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.FonteRecursoController.Apagar(System.Int32)">
+            <summary>
+            Apaga a Fonte Recurso pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Fonte Recurso apagada com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.GrupoDespesaController.BuscarTodos">
+            <summary>
+            Lista todas os Grupos Despesas
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna os Grupos Despesas cadastrados</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.GrupoDespesaController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista o Grupo Despesa pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna o Grupo Despesa</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.GrupoDespesaController.Cadastrar(API_Orcamento.Rest.Form.GrupoDespesaForm)">
+            <summary>
+            Cadastra o Grupo Despesa
+            </summary>
+            <returns></returns>
+            <response code = "200">Grupo Despesa cadastrado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.GrupoDespesaController.Atualizar(API_Orcamento.Rest.Form.GrupoDespesaForm,System.Int32)">
+            <summary>
+            Atualiza o Grupo Despesa pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Grupo Despesa atualizado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.GrupoDespesaController.Apagar(System.Int32)">
+            <summary>
+            Apaga o Grupo Despesa pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Grupo Despesa apagado com sucesso</response>>
             <response code = "500">Erro Interno no Servidor</response>>
         </member>
     </members>

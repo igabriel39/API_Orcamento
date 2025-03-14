@@ -236,5 +236,243 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.FonteRecursoController",
+    "Method": "BuscarTodos",
+    "RelativePath": "api/FonteRecurso",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_Orcamento.Rest.Dto.FonteRecursoDto, API_Orcamento, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.FonteRecursoController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/FonteRecurso",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fonteRecursoForm",
+        "Type": "API_Orcamento.Rest.Form.FonteRecursoForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.FonteRecursoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.FonteRecursoController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/FonteRecurso/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.FonteRecursoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.FonteRecursoController",
+    "Method": "Atualizar",
+    "RelativePath": "api/FonteRecurso/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fonteRecursoForm",
+        "Type": "API_Orcamento.Rest.Form.FonteRecursoForm",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.FonteRecursoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.FonteRecursoController",
+    "Method": "Apagar",
+    "RelativePath": "api/FonteRecurso/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.GrupoDespesaController",
+    "Method": "BuscarTodos",
+    "RelativePath": "api/GrupoDespesa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_Orcamento.Rest.Dto.GrupoDespesaDto, API_Orcamento, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.GrupoDespesaController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/GrupoDespesa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "grupoDespesaForm",
+        "Type": "API_Orcamento.Rest.Form.GrupoDespesaForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.GrupoDespesaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.GrupoDespesaController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/GrupoDespesa/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.GrupoDespesaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.GrupoDespesaController",
+    "Method": "Atualizar",
+    "RelativePath": "api/GrupoDespesa/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "grupoDespesaForm",
+        "Type": "API_Orcamento.Rest.Form.GrupoDespesaForm",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.GrupoDespesaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.GrupoDespesaController",
+    "Method": "Apagar",
+    "RelativePath": "api/GrupoDespesa/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
