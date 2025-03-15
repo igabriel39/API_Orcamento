@@ -24,6 +24,12 @@ namespace API_Orcamento.Config
             CreateMap<GrupoDespesaModel, GrupoDespesaDto>();
             CreateMap<GrupoDespesaForm, GrupoDespesaModel>();
 
+            CreateMap<ModalidadeAplicacaoModel, ModalidadeAplicacaoDto>();
+            CreateMap<ModalidadeAplicacaoForm, ModalidadeAplicacaoModel>();
+
+            CreateMap<ObjetivoEstrategicoModel, ObjetivoEstrategicoDto>();
+            CreateMap<ObjetivoEstrategicoForm, ObjetivoEstrategicoModel>();
+
 
         }
     }

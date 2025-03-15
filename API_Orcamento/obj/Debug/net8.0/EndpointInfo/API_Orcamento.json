@@ -916,6 +916,462 @@
           }
         }
       }
+    },
+    "/api/ModalidadeAplicacao": {
+      "get": {
+        "tags": [
+          "ModalidadeAplicacao"
+        ],
+        "summary": "Lista todas as Modalidades Aplicações",
+        "responses": {
+          "200": {
+            "description": "Retorna as Modalidades Aplicações cadastradas",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ModalidadeAplicacao"
+        ],
+        "summary": "Cadastra a Modalidade Aplicação",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModalidadeAplicacaoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModalidadeAplicacaoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModalidadeAplicacaoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Modalidade Aplicação cadastrada com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/ModalidadeAplicacao/{id}": {
+      "get": {
+        "tags": [
+          "ModalidadeAplicacao"
+        ],
+        "summary": "Lista a Modalidade Aplicação pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna a Modalidade Aplicação",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ModalidadeAplicacao"
+        ],
+        "summary": "Atualiza a Modalidade Aplicação pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModalidadeAplicacaoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModalidadeAplicacaoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModalidadeAplicacaoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Modalidade Aplicação atualizada com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModalidadeAplicacaoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ModalidadeAplicacao"
+        ],
+        "summary": "Apaga a Modalidade Aplicãção pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Modalidade Aplicação apagada com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/ObjetivoEstrategico": {
+      "get": {
+        "tags": [
+          "ObjetivoEstrategico"
+        ],
+        "summary": "Lista todos os Objetivos Estratégicos",
+        "responses": {
+          "200": {
+            "description": "Retorna os Objetivos Estratégicos cadastrados",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ObjetivoEstrategico"
+        ],
+        "summary": "Cadastra o Objetivo Estratégico",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ObjetivoEstrategicoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ObjetivoEstrategicoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ObjetivoEstrategicoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Objetivo Estratégico cadastrado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/ObjetivoEstrategico/{id}": {
+      "get": {
+        "tags": [
+          "ObjetivoEstrategico"
+        ],
+        "summary": "Lista o Objetivo Estratégico pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o Objetivo Estratégico",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ObjetivoEstrategico"
+        ],
+        "summary": "Atualiza o Objetivo Estratégico pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ObjetivoEstrategicoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ObjetivoEstrategicoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ObjetivoEstrategicoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Objetivo Estratégico atualizado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ObjetivoEstrategicoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ObjetivoEstrategico"
+        ],
+        "summary": "Apaga o Objetivo Estratégico pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Objetivo Estratégico apagado com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1061,6 +1517,70 @@
             "type": "number",
             "format": "double"
           },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModalidadeAplicacaoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModalidadeAplicacaoForm": {
+        "required": [
+          "codigo",
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObjetivoEstrategicoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObjetivoEstrategicoForm": {
+        "required": [
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
           "nome": {
             "minLength": 1,
             "type": "string"

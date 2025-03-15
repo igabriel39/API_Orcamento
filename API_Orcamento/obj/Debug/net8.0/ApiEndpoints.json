@@ -474,5 +474,243 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController",
+    "Method": "BuscarTodos",
+    "RelativePath": "api/ModalidadeAplicacao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_Orcamento.Rest.Dto.ModalidadeAplicacaoDto, API_Orcamento, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/ModalidadeAplicacao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "modalidadeAplicacaoForm",
+        "Type": "API_Orcamento.Rest.Form.ModalidadeAplicacaoForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ModalidadeAplicacaoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/ModalidadeAplicacao/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ModalidadeAplicacaoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController",
+    "Method": "Atualizar",
+    "RelativePath": "api/ModalidadeAplicacao/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "modalidadeAplicacaoForm",
+        "Type": "API_Orcamento.Rest.Form.ModalidadeAplicacaoForm",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ModalidadeAplicacaoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController",
+    "Method": "Apagar",
+    "RelativePath": "api/ModalidadeAplicacao/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController",
+    "Method": "BuscarTodos",
+    "RelativePath": "api/ObjetivoEstrategico",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_Orcamento.Rest.Dto.ObjetivoEstrategicoDto, API_Orcamento, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/ObjetivoEstrategico",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objetivoEstrategicoForm",
+        "Type": "API_Orcamento.Rest.Form.ObjetivoEstrategicoForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ObjetivoEstrategicoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/ObjetivoEstrategico/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ObjetivoEstrategicoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController",
+    "Method": "Atualizar",
+    "RelativePath": "api/ObjetivoEstrategico/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objetivoEstrategicoForm",
+        "Type": "API_Orcamento.Rest.Form.ObjetivoEstrategicoForm",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ObjetivoEstrategicoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController",
+    "Method": "Apagar",
+    "RelativePath": "api/ObjetivoEstrategico/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

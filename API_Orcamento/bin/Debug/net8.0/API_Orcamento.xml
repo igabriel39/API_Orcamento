@@ -208,5 +208,89 @@
             <response code = "200">Grupo Despesa apagado com sucesso</response>>
             <response code = "500">Erro Interno no Servidor</response>>
         </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController.BuscarTodos">
+            <summary>
+            Lista todas as Modalidades Aplicações
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna as Modalidades Aplicações cadastradas</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista a Modalidade Aplicação pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna a Modalidade Aplicação</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController.Cadastrar(API_Orcamento.Rest.Form.ModalidadeAplicacaoForm)">
+            <summary>
+            Cadastra a Modalidade Aplicação
+            </summary>
+            <returns></returns>
+            <response code = "200">Modalidade Aplicação cadastrada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController.Atualizar(API_Orcamento.Rest.Form.ModalidadeAplicacaoForm,System.Int32)">
+            <summary>
+            Atualiza a Modalidade Aplicação pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Modalidade Aplicação atualizada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController.Apagar(System.Int32)">
+            <summary>
+            Apaga a Modalidade Aplicãção pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Modalidade Aplicação apagada com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController.BuscarTodos">
+            <summary>
+            Lista todos os Objetivos Estratégicos
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna os Objetivos Estratégicos cadastrados</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista o Objetivo Estratégico pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna o Objetivo Estratégico</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController.Cadastrar(API_Orcamento.Rest.Form.ObjetivoEstrategicoForm)">
+            <summary>
+            Cadastra o Objetivo Estratégico
+            </summary>
+            <returns></returns>
+            <response code = "200">Objetivo Estratégico cadastrado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController.Atualizar(API_Orcamento.Rest.Form.ObjetivoEstrategicoForm,System.Int32)">
+            <summary>
+            Atualiza o Objetivo Estratégico pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Objetivo Estratégico atualizado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ObjetivoEstrategicoController.Apagar(System.Int32)">
+            <summary>
+            Apaga o Objetivo Estratégico pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Objetivo Estratégico apagado com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
     </members>
 </doc>

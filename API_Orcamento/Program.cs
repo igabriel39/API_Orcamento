@@ -43,6 +43,12 @@ builder.Services.AddScoped<FonteRecursoService>();
 
 builder.Services.AddScoped<IGrupoDespesaRepository, GrupoDespesaRepository>();
 builder.Services.AddScoped<GrupoDespesaService>();
+
+builder.Services.AddScoped<IModalidadeAplicacaoRepository, ModalidadeAplicacaoRepository>();
+builder.Services.AddScoped<ModalidadeAplicacaoService>();
+
+builder.Services.AddScoped<IObjetivoEstrategicoRepository, ObjetivoEstrategicoRepository>();
+builder.Services.AddScoped<ObjetivoEstrategicoService>();
 #endregion
 
 var app = builder.Build();
