@@ -292,5 +292,131 @@
             <response code = "200">Objetivo Estratégico apagado com sucesso</response>>
             <response code = "500">Erro Interno no Servidor</response>>
         </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ProgramaController.BuscarTodos">
+            <summary>
+            Lista todos os Programas
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna os Programas cadastrados</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ProgramaController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista o Programa pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna o Programa</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ProgramaController.Cadastrar(API_Orcamento.Rest.Form.ProgramaForm)">
+            <summary>
+            Cadastra o Programa
+            </summary>
+            <returns></returns>
+            <response code = "200">Programa cadastrado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ProgramaController.Atualizar(API_Orcamento.Rest.Form.ProgramaForm,System.Int32)">
+            <summary>
+            Atualiza o Programa pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Programa atualizado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.ProgramaController.Apagar(System.Int32)">
+            <summary>
+            Apaga o Programa pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Programa apagado com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.SolicitanteController.BuscarTodos">
+            <summary>
+            Lista todos os Solicitantes
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna os Solicitantes cadastrados</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.SolicitanteController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista o Solicitante pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna o Solicitante</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.SolicitanteController.Cadastrar(API_Orcamento.Rest.Form.SolicitanteForm)">
+            <summary>
+            Cadastra o Solicitante
+            </summary>
+            <returns></returns>
+            <response code = "200">Solicitante cadastrado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.SolicitanteController.Atualizar(API_Orcamento.Rest.Form.SolicitanteForm,System.Int32)">
+            <summary>
+            Atualiza o Solicitante pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Solicitante atualizado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.SolicitanteController.Apagar(System.Int32)">
+            <summary>
+            Apaga o Solicitante pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Solicitante apagado com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoLancamentoController.BuscarTodos">
+            <summary>
+            Lista todos os Tipos Lançamentos
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna os Tipos Lançamentos cadastrados</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoLancamentoController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista o Tipo Lançamento pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna o Tipo Lançamento</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoLancamentoController.Cadastrar(API_Orcamento.Rest.Form.TipoLancamentoForm)">
+            <summary>
+            Cadastra o Tipo Lançamento
+            </summary>
+            <returns></returns>
+            <response code = "200">Tipo Lançamento cadastrado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoLancamentoController.Atualizar(API_Orcamento.Rest.Form.TipoLancamentoForm,System.Int32)">
+            <summary>
+            Atualiza o Tipo Lançamento pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Tipo Lançamento atualizado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoLancamentoController.Apagar(System.Int32)">
+            <summary>
+            Apaga o Tipo Lançamento pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Ação apagada com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
     </members>
 </doc>

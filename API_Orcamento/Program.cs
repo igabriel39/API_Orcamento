@@ -49,6 +49,15 @@ builder.Services.AddScoped<ModalidadeAplicacaoService>();
 
 builder.Services.AddScoped<IObjetivoEstrategicoRepository, ObjetivoEstrategicoRepository>();
 builder.Services.AddScoped<ObjetivoEstrategicoService>();
+
+builder.Services.AddScoped<IProgramaRepository, ProgramaRepository>();
+builder.Services.AddScoped<ProgramaService>();
+
+builder.Services.AddScoped<ISolicitanteRepository, SolicitanteRepository>();
+builder.Services.AddScoped<SolicitanteService>();
+
+builder.Services.AddScoped<ITipoLancamentoRepository, TipoLancamentoRepository>();
+builder.Services.AddScoped<TipoLancamentoService>();
 #endregion
 
 var app = builder.Build();

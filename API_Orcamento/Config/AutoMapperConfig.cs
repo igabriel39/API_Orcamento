@@ -30,6 +30,15 @@ namespace API_Orcamento.Config
             CreateMap<ObjetivoEstrategicoModel, ObjetivoEstrategicoDto>();
             CreateMap<ObjetivoEstrategicoForm, ObjetivoEstrategicoModel>();
 
+            CreateMap<ProgramaModel, ProgramaDto>();
+            CreateMap<ProgramaForm, ProgramaModel>();
+
+            CreateMap<SolicitanteModel, SolicitanteDto>();
+            CreateMap<SolicitanteForm, SolicitanteModel>();
+
+            CreateMap<TipoLancamentoModel, TipoLancamentoDto>();
+            CreateMap<TipoLancamentoForm, TipoLancamentoModel>();
+
 
         }
     }

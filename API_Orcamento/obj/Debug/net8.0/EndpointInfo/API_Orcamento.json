@@ -1372,6 +1372,690 @@
           }
         }
       }
+    },
+    "/api/Programa": {
+      "get": {
+        "tags": [
+          "Programa"
+        ],
+        "summary": "Lista todos os Programas",
+        "responses": {
+          "200": {
+            "description": "Retorna os Programas cadastrados",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProgramaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProgramaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProgramaDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Programa"
+        ],
+        "summary": "Cadastra o Programa",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProgramaForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProgramaForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProgramaForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Programa cadastrado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramaDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/Programa/{id}": {
+      "get": {
+        "tags": [
+          "Programa"
+        ],
+        "summary": "Lista o Programa pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o Programa",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramaDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Programa"
+        ],
+        "summary": "Atualiza o Programa pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProgramaForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProgramaForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProgramaForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Programa atualizado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProgramaDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Programa"
+        ],
+        "summary": "Apaga o Programa pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Programa apagado com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/Solicitante": {
+      "get": {
+        "tags": [
+          "Solicitante"
+        ],
+        "summary": "Lista todos os Solicitantes",
+        "responses": {
+          "200": {
+            "description": "Retorna os Solicitantes cadastrados",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SolicitanteDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SolicitanteDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SolicitanteDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Solicitante"
+        ],
+        "summary": "Cadastra o Solicitante",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SolicitanteForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SolicitanteForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SolicitanteForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Solicitante cadastrado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolicitanteDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolicitanteDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolicitanteDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/Solicitante/{id}": {
+      "get": {
+        "tags": [
+          "Solicitante"
+        ],
+        "summary": "Lista o Solicitante pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o Solicitante",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolicitanteDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolicitanteDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolicitanteDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Solicitante"
+        ],
+        "summary": "Atualiza o Solicitante pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SolicitanteForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SolicitanteForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SolicitanteForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Solicitante atualizado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolicitanteDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolicitanteDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolicitanteDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Solicitante"
+        ],
+        "summary": "Apaga o Solicitante pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Solicitante apagado com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/TipoLancamento": {
+      "get": {
+        "tags": [
+          "TipoLancamento"
+        ],
+        "summary": "Lista todos os Tipos Lançamentos",
+        "responses": {
+          "200": {
+            "description": "Retorna os Tipos Lançamentos cadastrados",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoLancamentoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoLancamentoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TipoLancamentoDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TipoLancamento"
+        ],
+        "summary": "Cadastra o Tipo Lançamento",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoLancamentoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoLancamentoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoLancamentoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tipo Lançamento cadastrado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoLancamentoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoLancamentoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoLancamentoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/TipoLancamento/{id}": {
+      "get": {
+        "tags": [
+          "TipoLancamento"
+        ],
+        "summary": "Lista o Tipo Lançamento pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o Tipo Lançamento",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoLancamentoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoLancamentoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoLancamentoDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TipoLancamento"
+        ],
+        "summary": "Atualiza o Tipo Lançamento pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoLancamentoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoLancamentoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TipoLancamentoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tipo Lançamento atualizado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoLancamentoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoLancamentoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TipoLancamentoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TipoLancamento"
+        ],
+        "summary": "Apaga o Tipo Lançamento pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ação apagada com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1576,6 +2260,97 @@
         "additionalProperties": false
       },
       "ObjetivoEstrategicoForm": {
+        "required": [
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProgramaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProgramaForm": {
+        "required": [
+          "codigo",
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SolicitanteDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SolicitanteForm": {
+        "required": [
+          "nome"
+        ],
+        "type": "object",
+        "properties": {
+          "nome": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoLancamentoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoLancamentoForm": {
         "required": [
           "nome"
         ],

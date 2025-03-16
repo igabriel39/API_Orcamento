@@ -712,5 +712,362 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ProgramaController",
+    "Method": "BuscarTodos",
+    "RelativePath": "api/Programa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_Orcamento.Rest.Dto.ProgramaDto, API_Orcamento, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ProgramaController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/Programa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "programaForm",
+        "Type": "API_Orcamento.Rest.Form.ProgramaForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ProgramaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ProgramaController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/Programa/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ProgramaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ProgramaController",
+    "Method": "Atualizar",
+    "RelativePath": "api/Programa/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "programaForm",
+        "Type": "API_Orcamento.Rest.Form.ProgramaForm",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.ProgramaDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.ProgramaController",
+    "Method": "Apagar",
+    "RelativePath": "api/Programa/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.SolicitanteController",
+    "Method": "BuscarTodos",
+    "RelativePath": "api/Solicitante",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_Orcamento.Rest.Dto.SolicitanteDto, API_Orcamento, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.SolicitanteController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/Solicitante",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "solicitanteForm",
+        "Type": "API_Orcamento.Rest.Form.SolicitanteForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.SolicitanteDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.SolicitanteController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/Solicitante/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.SolicitanteDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.SolicitanteController",
+    "Method": "Atualizar",
+    "RelativePath": "api/Solicitante/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "solicitanteForm",
+        "Type": "API_Orcamento.Rest.Form.SolicitanteForm",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.SolicitanteDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.SolicitanteController",
+    "Method": "Apagar",
+    "RelativePath": "api/Solicitante/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.TipoLancamentoController",
+    "Method": "BuscarTodos",
+    "RelativePath": "api/TipoLancamento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[API_Orcamento.Rest.Dto.TipoLancamentoDto, API_Orcamento, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.TipoLancamentoController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/TipoLancamento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoLancamentoForm",
+        "Type": "API_Orcamento.Rest.Form.TipoLancamentoForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.TipoLancamentoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.TipoLancamentoController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/TipoLancamento/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.TipoLancamentoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.TipoLancamentoController",
+    "Method": "Atualizar",
+    "RelativePath": "api/TipoLancamento/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoLancamentoForm",
+        "Type": "API_Orcamento.Rest.Form.TipoLancamentoForm",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.TipoLancamentoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.TipoLancamentoController",
+    "Method": "Apagar",
+    "RelativePath": "api/TipoLancamento/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
