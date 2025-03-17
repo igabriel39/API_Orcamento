@@ -418,5 +418,131 @@
             <response code = "200">Ação apagada com sucesso</response>>
             <response code = "500">Erro Interno no Servidor</response>>
         </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoTransacaoController.BuscarTodos">
+            <summary>
+            Lista todos os Tipos Transações
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna os Tipos Transações cadastrados</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoTransacaoController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista o Tipo Transação pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna o Tipo Transação</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoTransacaoController.Cadastrar(API_Orcamento.Rest.Form.TipoTransacaoForm)">
+            <summary>
+            Cadastra o Tipo Transação
+            </summary>
+            <returns></returns>
+            <response code = "200">Tipo Transação cadastrado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoTransacaoController.Atualizar(API_Orcamento.Rest.Form.TipoTransacaoForm,System.Int32)">
+            <summary>
+            Atualiza o Tipo Transação pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Tipo Transação atualizado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.TipoTransacaoController.Apagar(System.Int32)">
+            <summary>
+            Apaga o Tipo Transação pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Tipo Transação apagado com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeController.BuscarTodos">
+            <summary>
+            Lista todas as Unidades
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna as Unidades cadastradas</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista a Unidade pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna a Unidade</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeController.Cadastrar(API_Orcamento.Rest.Form.UnidadeForm)">
+            <summary>
+            Cadastra a Unidade
+            </summary>
+            <returns></returns>
+            <response code = "200">Unidade cadastrada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeController.Atualizar(API_Orcamento.Rest.Form.UnidadeForm,System.Int32)">
+            <summary>
+            Atualiza a Unidade pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Unidade atualizada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeController.Apagar(System.Int32)">
+            <summary>
+            Apaga a Unidade pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Unidade apagada com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeOrcamentariaController.BuscarTodos">
+            <summary>
+            Lista todas as Unidades Orçamentárias
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna as Unidades Orçamentárias cadastradas</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeOrcamentariaController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista a Unidade Orçamentária pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna a Unidade Orçamentária</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeOrcamentariaController.Cadastrar(API_Orcamento.Rest.Form.UnidadeOrcamentariaForm)">
+            <summary>
+            Cadastra a Unidade Orçamentária
+            </summary>
+            <returns></returns>
+            <response code = "200">Unidade orçamentária cadastrada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeOrcamentariaController.Atualizar(API_Orcamento.Rest.Form.UnidadeOrcamentariaForm,System.Int32)">
+            <summary>
+            Atualiza a Unidade Orçamentária pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Unidade Orçamentária atualizada com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.UnidadeOrcamentariaController.Apagar(System.Int32)">
+            <summary>
+            Apaga a Unidade Orçamentária pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Unidade Orçamentária apagada com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
     </members>
 </doc>

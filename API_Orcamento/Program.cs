@@ -58,6 +58,15 @@ builder.Services.AddScoped<SolicitanteService>();
 
 builder.Services.AddScoped<ITipoLancamentoRepository, TipoLancamentoRepository>();
 builder.Services.AddScoped<TipoLancamentoService>();
+
+builder.Services.AddScoped<ITipoTransacaoRepository, TipoTransacaoRepository>();
+builder.Services.AddScoped<TipoTransacaoService>();
+
+builder.Services.AddScoped<IUnidadeRepository, UnidadeRepository>();
+builder.Services.AddScoped<UnidadeService>();
+
+builder.Services.AddScoped<IUnidadeOrcamentariaRepository, UnidadeOrcamentariaRepository>();
+builder.Services.AddScoped<UnidadeOrcamentariaService>();
 #endregion
 
 var app = builder.Build();
