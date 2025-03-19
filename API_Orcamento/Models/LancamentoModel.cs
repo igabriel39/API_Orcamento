@@ -69,7 +69,7 @@ namespace API_Orcamento.Models
         public virtual ObjetivoEstrategicoModel ObjetivoEstrategico { get; set; }
 
         [ForeignKey("GrupoDespesaModel")]
-        private int grupoDespesaModel;
+        private int grupoDespesaId;
         public virtual GrupoDespesaModel GrupoDespesa { get; set; }
 
         [ForeignKey("ModalidadeAplicacaoModel")]
@@ -77,36 +77,42 @@ namespace API_Orcamento.Models
         public virtual ModalidadeAplicacaoModel ModalidadeAplicacao { get; set; }
 
         [ForeignKey("TipoTransacaoModel")]
-        private int tipoTransacaoModel;
+        private int tipoTransacaoId;
         public virtual TipoTransacaoModel TipoTransacao { get; set; }
 
         [ForeignKey("FonteRecursoModel")]
         private int fonteRecursoId;
         public virtual FonteRecursoModel FonteRecurso { get; set; }
 
+        [ForeignKey("LancamentoModel")]
+        private int idLancamentoPai;
+        public virtual LancamentoModel Lancamento { get; set; }
+
 
         public int Id { get => id; set => id = value; }
         public bool LancamentoValido { get => lancamentoValido; set => lancamentoValido = value; }
         public int NumeroLancamento { get => numeroLancamento; set => numeroLancamento = value; }
         public DateTime DataLancamento { get => dataLancamento; set => dataLancamento = value; }
-        public string GED { get => GED; set => GED = value; }
+        public string GED { get => ged; set => ged = value; }
+        public string Descricao { get => descricao; set => descricao = value; }
         public string Contratado { get => contratado; set => contratado = value; }
         public decimal Valor { get => valor; set => valor = value; }
         public DateTime DataCadastro { get => dataCadastro; set => dataCadastro = value; }
         public DateTime DataAlteracao { get => dataAlteracao; set => dataAlteracao = value; }
         public int AnoOrcamento { get => anoOrcamento; set => anoOrcamento = value; }
 
-        public int TipoLancamentoId { get => TipoLancamentoId; set => TipoLancamentoId = value; }
-        public int UnidadeId { get => UnidadeId; set => UnidadeId = value; }
-        public int UnidadeOrcamentariaId { get => UnidadeOrcamentariaId; set => UnidadeOrcamentariaId = value; }
-        public int ElementoDespesaId { get => ElementoDespesaId; set => ElementoDespesaId = value; }
-        public int AcaoId { get => AcaoId; set => AcaoId = value; }
-        public int ProgramaId { get => ProgramaId; set => ProgramaId = value; }
-        public int SolicitanteId { get => SolicitanteId; set => SolicitanteId = value; }
-        public int ObjetivoEstrategicoId { get => ObjetivoEstrategicoId; set => ObjetivoEstrategicoId = value; }
-        public int GrupoDespesaId { get => GrupoDespesaId; set => GrupoDespesaId = value; }
-        public int ModalidadeAplicacaoId { get => ModalidadeAplicacaoId; set => ModalidadeAplicacaoId = value; }
-        public int TipoTransacaoId { get => TipoTransacaoId; set => TipoTransacaoId = value; }
-        public int FonteRecursoId { get => FonteRecursoId; set => FonteRecursoId = value; }
+        public int TipoLancamentoId { get => tipoLancamentoId; set => tipoLancamentoId = value; }
+        public int UnidadeId { get => unidadeId; set => unidadeId = value; }
+        public int UnidadeOrcamentariaId { get => unidadeOrcamentariaId; set => unidadeOrcamentariaId = value; }
+        public int ElementoDespesaId { get => elementoDespesaId; set => elementoDespesaId = value; }
+        public int AcaoId { get => acaoId; set => acaoId = value; }
+        public int ProgramaId { get => programaId; set => programaId = value; }
+        public int SolicitanteId { get => solicitanteId; set => solicitanteId = value; }
+        public int ObjetivoEstrategicoId { get => objetivoEstrategicoId; set => objetivoEstrategicoId = value; }
+        public int GrupoDespesaId { get => grupoDespesaId; set => grupoDespesaId = value; }
+        public int ModalidadeAplicacaoId { get => modalidadeAplicacaoId; set => modalidadeAplicacaoId = value; }
+        public int TipoTransacaoId { get => tipoTransacaoId; set => tipoTransacaoId = value; }
+        public int FonteRecursoId { get => fonteRecursoId; set => fonteRecursoId = value; }
+        public int IdLancamentoPai { get => idLancamentoPai; set => idLancamentoPai = value; }
     }
 }

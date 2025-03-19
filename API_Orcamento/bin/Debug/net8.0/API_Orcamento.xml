@@ -40,6 +40,18 @@
         <member name="M:API_Orcamento.Migrations.campoCodigoDecimal.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:API_Orcamento.Migrations.descricao">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.descricao.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.descricao.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.descricao.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="M:API_Orcamento.Rest.Controllers.AcaoController.BuscarTodos">
             <summary>
             Lista todas as Ações
@@ -206,6 +218,14 @@
             </summary>
             <returns></returns>
             <response code = "200">Grupo Despesa apagado com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.LancamentoController.BuscarTodos">
+            <summary>
+            Lista todas os Lançamentos
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna os Lançamentos cadastrados</response>>
             <response code = "500">Erro Interno no Servidor</response>>
         </member>
         <member name="M:API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController.BuscarTodos">

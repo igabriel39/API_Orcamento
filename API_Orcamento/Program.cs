@@ -67,6 +67,9 @@ builder.Services.AddScoped<UnidadeService>();
 
 builder.Services.AddScoped<IUnidadeOrcamentariaRepository, UnidadeOrcamentariaRepository>();
 builder.Services.AddScoped<UnidadeOrcamentariaService>();
+
+builder.Services.AddScoped<ILancamentoRepository, LancamentoRepository>();
+builder.Services.AddScoped<LancamentoService>();
 #endregion
 
 var app = builder.Build();

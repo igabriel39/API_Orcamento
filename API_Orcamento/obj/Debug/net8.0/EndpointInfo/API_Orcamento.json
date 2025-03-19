@@ -917,6 +917,48 @@
         }
       }
     },
+    "/api/Lancamento": {
+      "get": {
+        "tags": [
+          "Lancamento"
+        ],
+        "summary": "Lista todas os Lançamentos",
+        "responses": {
+          "200": {
+            "description": "Retorna os Lançamentos cadastrados",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LancamentoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LancamentoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LancamentoDto"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
     "/api/ModalidadeAplicacao": {
       "get": {
         "tags": [
@@ -2888,6 +2930,99 @@
           "nome": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LancamentoDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lancamentoValido": {
+            "type": "boolean"
+          },
+          "numeroLancamento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataLancamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "idLancamentoPai": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "valor": {
+            "type": "number",
+            "format": "double"
+          },
+          "dsTipoLancamento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsUnidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsUnidadeOrcamentaria": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsPrograma": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsAcao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsFonteRecurso": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsGrupoDespesa": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsModalidadeAplicacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsElementoDespesa": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsSolicitante": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsObjetivoEstrategico": {
+            "type": "string",
+            "nullable": true
+          },
+          "dsTipoTransacao": {
+            "type": "string",
+            "nullable": true
+          },
+          "geD1": {
+            "type": "string",
+            "nullable": true
+          },
+          "contratado": {
+            "type": "string",
+            "nullable": true
+          },
+          "anoOrcamento": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
