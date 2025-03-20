@@ -5,6 +5,7 @@ using API_Orcamento.Rest.Dto;
 using API_Orcamento.Rest.Form;
 using API_Orcamento.Service.Exceptions;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_Orcamento.Service
 {
@@ -24,9 +25,9 @@ namespace API_Orcamento.Service
         {
             try
             {
-                List<ConsultaLancamento> consultaLancamentos = await _lancamentoRepository.BuscarTodosLancamentos();
+                List<ConsultaLancamento> lancamentos = await _lancamentoRepository.BuscarTodosLancamentos();
 
-                return (List<LancamentoDto>)_mapper.Map<IEnumerable<LancamentoDto>>(consultaLancamentos);
+                return (List<LancamentoDto>)_mapper.Map<IEnumerable<LancamentoDto>>(lancamentos);
             }
             catch (Exception ex)
             {
@@ -34,97 +35,118 @@ namespace API_Orcamento.Service
             }
         }
 
-        //public async Task<AcaoDto> ObterPorId(int id)
-        //{
-        //    try
-        //    {
-        //        AcaoModel acaoModel = await _acaoRepository.BuscarPorId(id);
-        //        if (acaoModel == null)
-        //        {
-        //            throw new ObjectNotFound($"Ação não encontrada para o ID: {id}");
-        //        }
-        //        else
-        //        {
-        //            return _mapper.Map<AcaoDto>(acaoModel);
-        //        }
-        //    }
-        //    catch (ObjectNotFound ex)
-        //    {
-        //        throw new ObjectNotFound(ex.Message);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception($"Não foi possível consultar a Ação para o ID: {id}!");
-        //    }
-        //}
+        public async Task<LancamentoDto> ObterPorId(int id)
+        {
+            try
+            {
+                ConsultaLancamento lancamento = await _lancamentoRepository.BuscarPorId(id);
+                if (lancamento == null)
+                {
+                    throw new ObjectNotFound($"Lançamento não encontrado para o ID: {id}");
+                }
+                else
+                {
+                    return _mapper.Map<LancamentoDto>(lancamento);
+                }
+            }
+            catch (ObjectNotFound ex)
+            {
+                throw new ObjectNotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Não foi possível consultar o Lançamento para o ID: {id}!");
+            }
+        }
 
-        //public async Task<AcaoDto> Cadastrar(AcaoForm acaoForm)
-        //{
-        //    try
-        //    {
-        //        AcaoModel acaoCadastrada = _mapper.Map<AcaoModel>(acaoForm);
-        //        acaoCadastrada.DtCadastro = DateTime.Now;
+        public async Task<LancamentoDto> Cadastrar(LancamentoForm lancamentoForm)
+        {
+            try
+            {
+                LancamentoModel lancamentoCadastrado = _mapper.Map<LancamentoModel>(lancamentoForm);
+                lancamentoCadastrado.DataCadastro = DateTime.Now;
 
-        //        acaoCadastrada = await _acaoRepository.AdicionarAcao(acaoCadastrada);
-        //        return _mapper.Map<AcaoDto>(acaoCadastrada);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("Não foi possível cadastrar a Ação desejada!");
-        //    }
-        //}
+                lancamentoCadastrado = await _lancamentoRepository.AdicionarLancamento(lancamentoCadastrado);
+                return _mapper.Map<LancamentoDto>(lancamentoCadastrado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível cadastrar o Lançamento desejado!");
+            }
+        }
 
-        //public async Task<AcaoDto> Atualizar(AcaoForm acaoForm, int id)
-        //{
-        //    try
-        //    {
-        //        AcaoModel acaoExistente = await _acaoRepository.BuscarPorId(id);
-        //        if (acaoExistente == null)
-        //        {
-        //            throw new ObjectNotFound($"Ação não encontrada para o ID: {id}");
-        //        }
-        //        else
-        //        {
-        //            AcaoModel acaoAtualizada = acaoExistente;
-        //            acaoAtualizada.Codigo = acaoForm.codigo;
-        //            acaoAtualizada.Nome = acaoForm.nome;
-        //            acaoAtualizada.DtUltimaAlteracao = DateTime.Now;
-        //            acaoAtualizada = await _acaoRepository.AtualizarAcao(acaoAtualizada);
-        //            return _mapper.Map<AcaoDto>(acaoAtualizada);
-        //        }
-        //    }
-        //    catch (ObjectNotFound ex)
-        //    {
-        //        throw new ObjectNotFound(ex.Message);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("Não foi possível atualizar a Ação desejada!");
-        //    }
-        //}
+        public async Task<LancamentoDto> Atualizar(LancamentoForm lancamentoForm, int id)
+        {
+            try
+            {
+                LancamentoModel lancamentoExistente = await _lancamentoRepository.BuscarModelPorId(id);
+                if (lancamentoExistente == null)
+                {
+                    throw new ObjectNotFound($"Lançamento não encontrado para o ID: {id}");
+                }
+                else
+                {
+                    LancamentoModel lancamentoAtualizado = lancamentoExistente;
+                    lancamentoAtualizado.LancamentoValido = (bool)lancamentoForm.lancamentoValido;
+                    lancamentoAtualizado.NumeroLancamento = lancamentoForm.numeroLancamento;
+                    lancamentoAtualizado.Descricao = lancamentoForm.descricao;
+                    lancamentoAtualizado.DataLancamento = lancamentoForm.dataLancamento;
+                    lancamentoAtualizado.LancamentoId = lancamentoForm.idLancamentoPai;
+                    lancamentoAtualizado.Valor = (decimal)lancamentoForm.valor;
+                    lancamentoAtualizado.TipoLancamentoId = lancamentoForm.idTipoLancamento;
+                    lancamentoAtualizado.UnidadeId = lancamentoForm.idUnidade;
+                    lancamentoAtualizado.UnidadeOrcamentariaId = lancamentoForm.idUnidadeOrcamentaria;
+                    lancamentoAtualizado.ProgramaId = lancamentoForm.idPrograma;
+                    lancamentoAtualizado.AcaoId = lancamentoForm.idAcao;
+                    lancamentoAtualizado.FonteRecursoId = lancamentoForm.idFonteRecurso;
+                    lancamentoAtualizado.TipoLancamentoId = lancamentoForm.idTipoLancamento;
+                    lancamentoAtualizado.ModalidadeAplicacaoId = lancamentoForm.idModalidadeAplicacao;
+                    lancamentoAtualizado.ElementoDespesaId = lancamentoForm.idElementoDespesa;
+                    lancamentoAtualizado.SolicitanteId = lancamentoForm.idSolicitante;
+                    lancamentoAtualizado.ObjetivoEstrategicoId = lancamentoForm.idObjetivoEstrategico;
+                    lancamentoAtualizado.TipoTransacaoId = lancamentoForm.idTipoTransacao;
+                    lancamentoAtualizado.GED = lancamentoForm.ged;
+                    lancamentoAtualizado.Contratado = lancamentoForm.contratado;
+                    lancamentoAtualizado.AnoOrcamento = lancamentoForm.anoOrcamento;
+                    lancamentoAtualizado.DataAlteracao = DateTime.Now;
+                    lancamentoAtualizado = await _lancamentoRepository.AtualizarLancamento(lancamentoAtualizado);
 
-        //public async Task Apagar(int id)
-        //{
-        //    try
-        //    {
-        //        AcaoModel acaoExistente = await _acaoRepository.BuscarPorId(id);
-        //        if (acaoExistente == null)
-        //        {
-        //            throw new ObjectNotFound($"Ação não encontrada para o ID: {id}");
-        //        }
-        //        else
-        //        {
-        //            await _acaoRepository.ApagarAcao(acaoExistente);
-        //        }
-        //    }
-        //    catch (ObjectNotFound ex)
-        //    {
-        //        throw new ObjectNotFound(ex.Message);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("Não foi possível apagar a Ação desejada!");
-        //    }
-        //}
+                    ConsultaLancamento lancamentoAtualizadoConsulta = await _lancamentoRepository.BuscarPorId(lancamentoAtualizado.Id);
+                    return _mapper.Map<LancamentoDto>(lancamentoAtualizadoConsulta);
+                }
+            }
+            catch (ObjectNotFound ex)
+            {
+                throw new ObjectNotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível atualizar o Lançamento desejado!");
+            }
+        }
+
+        public async Task Apagar(int id)
+        {
+            try
+            {
+                LancamentoModel lancamentoExistente = await _lancamentoRepository.BuscarModelPorId(id);
+                if (lancamentoExistente == null)
+                {
+                    throw new ObjectNotFound($"Lançamento não encontrado para o ID: {id}");
+                }
+                else
+                {
+                    await _lancamentoRepository.ApagarLancamento(lancamentoExistente);
+                }
+            }
+            catch (ObjectNotFound ex)
+            {
+                throw new ObjectNotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível apagar o Lançamento desejado!");
+            }
+        }
     }
 }

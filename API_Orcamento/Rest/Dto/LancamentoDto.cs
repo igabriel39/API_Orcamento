@@ -6,7 +6,7 @@
         private bool lancamentoValido;
         private int numeroLancamento;
         private string descricao;
-        private string dataLancamento;
+        private DateOnly dataLancamento;
         private int idLancamentoPai;
         private decimal valor;
         private string dsTipoLancamento;
@@ -21,7 +21,7 @@
         private string dsSolicitante;
         private string dsObjetivoEstrategico;
         private string dsTipoTransacao;
-        private string GED;
+        private string ged;
         private string contratado;
         private short anoOrcamento;
 
@@ -29,7 +29,7 @@
         public bool LancamentoValido { get => lancamentoValido; set => lancamentoValido = value; }
         public int NumeroLancamento { get => numeroLancamento; set => numeroLancamento = value; }
         public string Descricao { get => descricao; set => descricao = value; }
-        public string DataLancamento { get => dataLancamento; set => dataLancamento = value; }
+        public DateOnly DataLancamento { get => dataLancamento; set => dataLancamento = value; }
         public int IdLancamentoPai { get => idLancamentoPai; set => idLancamentoPai = value; }
         public decimal Valor { get => valor; set => valor = value; }
         public string DsTipoLancamento { get => dsTipoLancamento; set => dsTipoLancamento = value; }
@@ -44,7 +44,7 @@
         public string DsSolicitante { get => dsSolicitante; set => dsSolicitante = value; }
         public string DsObjetivoEstrategico { get => dsObjetivoEstrategico; set => dsObjetivoEstrategico = value; }
         public string DsTipoTransacao { get => dsTipoTransacao; set => dsTipoTransacao = value; }
-        public string GED1 { get => GED; set => GED = value; }
+        public string GED { get => ged; set => ged = value; }
         public string Contratado { get => contratado; set => contratado = value; }
         public short AnoOrcamento { get => anoOrcamento; set => anoOrcamento = value; }
     }

@@ -52,6 +52,42 @@
         <member name="M:API_Orcamento.Migrations.descricao.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:API_Orcamento.Migrations.autoRelacionamentoLancamento">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.autoRelacionamentoLancamento.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.autoRelacionamentoLancamento.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.autoRelacionamentoLancamento.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API_Orcamento.Migrations.autorelacionamento">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.autorelacionamento.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.autorelacionamento.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.autorelacionamento.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:API_Orcamento.Migrations.dataLancamento">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.dataLancamento.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.dataLancamento.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.dataLancamento.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="M:API_Orcamento.Rest.Controllers.AcaoController.BuscarTodos">
             <summary>
             Lista todas as Ações
@@ -226,6 +262,40 @@
             </summary>
             <returns></returns>
             <response code = "200">Retorna os Lançamentos cadastrados</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.LancamentoController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista o Lançamento pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna o Lançamento</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.LancamentoController.Cadastrar(API_Orcamento.Rest.Form.LancamentoForm)">
+            <summary>
+            Cadastra o Lançamento
+            </summary>
+            <returns></returns>
+            <response code = "200">Lançamento cadastrado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.LancamentoController.Atualizar(API_Orcamento.Rest.Form.LancamentoForm,System.Int32)">
+            <summary>
+            Atualiza o Lançamento pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Lançamento atualizado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.LancamentoController.Apagar(System.Int32)">
+            <summary>
+            Apaga o Lançamento pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Lançamento apagado com sucesso</response>>
             <response code = "500">Erro Interno no Servidor</response>>
         </member>
         <member name="M:API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController.BuscarTodos">

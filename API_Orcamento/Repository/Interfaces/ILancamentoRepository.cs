@@ -5,9 +5,10 @@ namespace API_Orcamento.Repository.Interfaces
     public interface ILancamentoRepository
     {
         Task<List<ConsultaLancamento>> BuscarTodosLancamentos();
-        //Task<AcaoModel> BuscarPorId(int id);
-        //Task<AcaoModel> AdicionarAcao(AcaoModel acao);
-        //Task<AcaoModel> AtualizarAcao(AcaoModel acao);
-        //Task ApagarAcao(AcaoModel acao);
+        Task<ConsultaLancamento> BuscarPorId(int id);
+        Task<LancamentoModel> BuscarModelPorId(int id);
+        Task<LancamentoModel> AdicionarLancamento(LancamentoModel lancamento);
+        Task<LancamentoModel> AtualizarLancamento(LancamentoModel lancamento);
+        Task ApagarLancamento(LancamentoModel lancamento);
     }
 }

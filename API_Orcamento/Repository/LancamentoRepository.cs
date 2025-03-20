@@ -9,22 +9,15 @@ namespace API_Orcamento.Repository
     {
         // Injeção de dependência com o banco de dados para pode realizar as tarefas básicas que precisa conexão com a base
         private readonly _DbContext _dbContext;
-        public LancamentoRepository(_DbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
-        public async Task<List<ConsultaLancamento>> BuscarTodosLancamentos()
-        {
-            // Script para consultar os lançamentos fazendo relação com as tabelas de apoio
-            #region script
-            string script = @"SELECT
+        // Script para consultar os lançamentos fazendo relação com as tabelas de apoio
+        #region Script de consulta lançamentos
+        string script = @"SELECT
                               L.id,
                               L.lancamentoValido,
                               L.numeroLancamento,
                               L.descricao,
                               L.dataLancamento,
-                              L.idLancamentoPai,
+                              L.lancamentoId AS idLancamentoPai,
                               L.valor,
                               TL.nome as dsTipoLancamento,
                               U.nome AS dsUnidade,
@@ -54,10 +47,49 @@ namespace API_Orcamento.Repository
                               JOIN TBMODALIDADEAPLICACAO MA ON L.ModalidadeAplicacaoId = MA.id
                               JOIN TBTIPOTRANSACAO TT ON L.TipoTransacaoId = TT.id
                               JOIN TBFONTERECURSO FR ON L.FonteRecursoId = FR.id";
-            #endregion
+        #endregion
 
+        public LancamentoRepository(_DbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+        public async Task<ConsultaLancamento> BuscarPorId(int id)
+        {
+            var sql = FormattableStringFactory.Create(script);
+            return await _dbContext.Database.SqlQuery<ConsultaLancamento>(sql).Where(l => l.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<LancamentoModel> BuscarModelPorId(int id)
+        {
+            return await _dbContext.tbLancamentos.FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<List<ConsultaLancamento>> BuscarTodosLancamentos()
+        {
             var sql = FormattableStringFactory.Create(script);
             return await _dbContext.Database.SqlQuery<ConsultaLancamento>(sql).ToListAsync();
+        }
+
+        public async Task<LancamentoModel> AdicionarLancamento(LancamentoModel lancamento)
+        {
+            await _dbContext.tbLancamentos.AddAsync(lancamento);
+            await _dbContext.SaveChangesAsync();
+
+            return lancamento;
+        }
+
+        public async Task ApagarLancamento(LancamentoModel lancamento)
+        {
+            _dbContext.tbLancamentos.Remove(lancamento);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<LancamentoModel> AtualizarLancamento(LancamentoModel lancamento)
+        {
+            _dbContext.tbLancamentos.Update(lancamento);
+            await _dbContext.SaveChangesAsync();
+
+            return lancamento;
         }
     }
 }

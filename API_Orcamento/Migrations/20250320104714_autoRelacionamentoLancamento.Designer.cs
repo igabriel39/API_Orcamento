@@ -4,6 +4,7 @@ using API_Orcamento.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_Orcamento.Migrations
 {
     [DbContext(typeof(_DbContext))]
-    partial class _DbContextModelSnapshot : ModelSnapshot
+    [Migration("20250320104714_autoRelacionamentoLancamento")]
+    partial class autoRelacionamentoLancamento
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,8 +153,8 @@ namespace API_Orcamento.Migrations
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateOnly>("DataLancamento")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DataLancamento")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
@@ -170,7 +173,7 @@ namespace API_Orcamento.Migrations
                     b.Property<int>("GrupoDespesaId")
                         .HasColumnType("int");
 
-                    b.Property<int>("LancamentoId")
+                    b.Property<int>("LancamentoModel")
                         .HasColumnType("int");
 
                     b.Property<bool>("LancamentoValido")
@@ -216,7 +219,7 @@ namespace API_Orcamento.Migrations
 
                     b.HasIndex("GrupoDespesaId");
 
-                    b.HasIndex("LancamentoId");
+                    b.HasIndex("LancamentoModel");
 
                     b.HasIndex("ModalidadeAplicacaoId");
 
@@ -458,7 +461,7 @@ namespace API_Orcamento.Migrations
 
                     b.HasOne("API_Orcamento.Models.LancamentoModel", "Lancamento")
                         .WithMany()
-                        .HasForeignKey("LancamentoId")
+                        .HasForeignKey("LancamentoModel")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

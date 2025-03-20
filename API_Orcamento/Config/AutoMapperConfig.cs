@@ -49,6 +49,7 @@ namespace API_Orcamento.Config
             CreateMap<UnidadeOrcamentariaForm, UnidadeOrcamentariaModel>();
 
             CreateMap<ConsultaLancamento, LancamentoDto>();
+            CreateMap<LancamentoForm, LancamentoModel>();
         }
     }
 }

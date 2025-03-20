@@ -29,58 +29,58 @@ namespace API_Orcamento.Rest.Controllers
             return Ok(lancamentoDtos);
         }
 
-        ///// <summary>
-        ///// Lista a Ação pelo id informado
-        ///// </summary>
-        ///// <returns></returns>
-        ///// <response code = "200">Retorna a Ação</response>>
-        ///// <response code = "500">Erro Interno no Servidor</response>>
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<AcaoDto>> BuscarPorId(int id)
-        //{
-        //    AcaoDto acaoDto = await _acaoService.ObterPorId(id);
-        //    return Ok(acaoDto);
-        //}
+        /// <summary>
+        /// Lista o Lançamento pelo id informado
+        /// </summary>
+        /// <returns></returns>
+        /// <response code = "200">Retorna o Lançamento</response>>
+        /// <response code = "500">Erro Interno no Servidor</response>>
+        [HttpGet("{id}")]
+        public async Task<ActionResult<LancamentoDto>> BuscarPorId(int id)
+        {
+            LancamentoDto lancamentoDto = await _lancamentoService.ObterPorId(id);
+            return Ok(lancamentoDto);
+        }
 
-        ///// <summary>
-        ///// Cadastra a Ação
-        ///// </summary>
-        ///// <returns></returns>
-        ///// <response code = "200">Ação cadastrada com sucesso</response>>
-        ///// <response code = "400">Requisição enviada inválida</response>>
-        ///// <response code = "500">Erro Interno no Servidor</response>>
-        //[HttpPost]
-        //public async Task<ActionResult<AcaoDto>> Cadastrar([FromBody] AcaoForm acaoForm)
-        //{
-        //    AcaoDto acaoCadastrada = await _acaoService.Cadastrar(acaoForm);
-        //    return Ok(acaoCadastrada);
-        //}
+        /// <summary>
+        /// Cadastra o Lançamento
+        /// </summary>
+        /// <returns></returns>
+        /// <response code = "200">Lançamento cadastrado com sucesso</response>>
+        /// <response code = "400">Requisição enviada inválida</response>>
+        /// <response code = "500">Erro Interno no Servidor</response>>
+        [HttpPost]
+        public async Task<ActionResult<LancamentoDto>> Cadastrar([FromBody] LancamentoForm lancamentoForm)
+        {
+            LancamentoDto lancamentoCadastrado = await _lancamentoService.Cadastrar(lancamentoForm);
+            return Ok(lancamentoCadastrado);
+        }
 
-        ///// <summary>
-        ///// Atualiza a Ação pelo id informado
-        ///// </summary>
-        ///// <returns></returns>
-        ///// <response code = "200">Ação atualizada com sucesso</response>>
-        ///// <response code = "400">Requisição enviada inválida</response>>
-        ///// <response code = "500">Erro Interno no Servidor</response>>
-        //[HttpPut("{id}")]
-        //public async Task<ActionResult<AcaoDto>> Atualizar([FromBody] AcaoForm acaoForm, int id)
-        //{
-        //    AcaoDto acaoAtualizada = await _acaoService.Atualizar(acaoForm, id);
-        //    return Ok(acaoAtualizada);
-        //}
+        /// <summary>
+        /// Atualiza o Lançamento pelo id informado
+        /// </summary>
+        /// <returns></returns>
+        /// <response code = "200">Lançamento atualizado com sucesso</response>>
+        /// <response code = "400">Requisição enviada inválida</response>>
+        /// <response code = "500">Erro Interno no Servidor</response>>
+        [HttpPut("{id}")]
+        public async Task<ActionResult<LancamentoDto>> Atualizar([FromBody] LancamentoForm lancamentoForm, int id)
+        {
+            LancamentoDto lancamentoAtualizado = await _lancamentoService.Atualizar(lancamentoForm, id);
+            return Ok(lancamentoAtualizado);
+        }
 
-        ///// <summary>
-        ///// Apaga a Ação pelo id informado
-        ///// </summary>
-        ///// <returns></returns>
-        ///// <response code = "200">Ação apagada com sucesso</response>>
-        ///// <response code = "500">Erro Interno no Servidor</response>>
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult> Apagar(int id)
-        //{
-        //    await _acaoService.Apagar(id);
-        //    return Ok();
-        //}
+        /// <summary>
+        /// Apaga o Lançamento pelo id informado
+        /// </summary>
+        /// <returns></returns>
+        /// <response code = "200">Lançamento apagado com sucesso</response>>
+        /// <response code = "500">Erro Interno no Servidor</response>>
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Apagar(int id)
+        {
+            await _lancamentoService.Apagar(id);
+            return Ok();
+        }
     }
 }
