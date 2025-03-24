@@ -7,8 +7,8 @@
         private bool lancamentoValido;
         private int numeroLancamento;
         private string descricao;
-        private string dataLancamento;
-        private int idLancamentoPai;
+        private DateOnly dataLancamento;
+        private int? idLancamentoPai;
         private decimal valor;
         private string dsTipoLancamento;
         private string dsUnidade;
@@ -24,14 +24,14 @@
         private string dsTipoTransacao;
         private string ged;
         private string contratado;
-        private short anoOrcamento;
+        private int anoOrcamento;
 
         public int Id { get => id; set => id = value; }
         public bool LancamentoValido { get => lancamentoValido; set => lancamentoValido = value; }
         public int NumeroLancamento { get => numeroLancamento; set => numeroLancamento = value; }
         public string Descricao { get => descricao; set => descricao = value; }
-        public string DataLancamento { get => dataLancamento; set => dataLancamento = value; }
-        public int IdLancamentoPai { get => idLancamentoPai; set => idLancamentoPai = value; }
+        public DateOnly DataLancamento { get => dataLancamento; set => dataLancamento = value; }
+        public int? IdLancamentoPai { get => idLancamentoPai; set => idLancamentoPai = value; }
         public decimal Valor { get => valor; set => valor = value; }
         public string DsTipoLancamento { get => dsTipoLancamento; set => dsTipoLancamento = value; }
         public string DsUnidade { get => dsUnidade; set => dsUnidade = value; }
@@ -47,6 +47,6 @@
         public string DsTipoTransacao { get => dsTipoTransacao; set => dsTipoTransacao = value; }
         public string Ged { get => ged; set => ged = value; }
         public string Contratado { get => contratado; set => contratado = value; }
-        public short AnoOrcamento { get => anoOrcamento; set => anoOrcamento = value; }
+        public int AnoOrcamento { get => anoOrcamento; set => anoOrcamento = value; }
     }
 }

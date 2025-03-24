@@ -957,6 +957,192 @@
             "description": "Erro Interno no Servidor"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Lancamento"
+        ],
+        "summary": "Cadastra o Lançamento",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LancamentoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LancamentoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LancamentoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lançamento cadastrado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LancamentoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LancamentoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LancamentoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      }
+    },
+    "/api/Lancamento/{id}": {
+      "get": {
+        "tags": [
+          "Lancamento"
+        ],
+        "summary": "Lista o Lançamento pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o Lançamento",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LancamentoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LancamentoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LancamentoDto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Lancamento"
+        ],
+        "summary": "Atualiza o Lançamento pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LancamentoForm"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LancamentoForm"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LancamentoForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Lançamento atualizado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LancamentoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LancamentoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LancamentoDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Requisição enviada inválida"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Lancamento"
+        ],
+        "summary": "Apaga o Lançamento pelo id informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lançamento apagado com sucesso"
+          },
+          "500": {
+            "description": "Erro Interno no Servidor"
+          }
+        }
       }
     },
     "/api/ModalidadeAplicacao": {
@@ -2954,7 +3140,7 @@
           },
           "dataLancamento": {
             "type": "string",
-            "nullable": true
+            "format": "date"
           },
           "idLancamentoPai": {
             "type": "integer",
@@ -3012,7 +3198,104 @@
             "type": "string",
             "nullable": true
           },
-          "geD1": {
+          "ged": {
+            "type": "string",
+            "nullable": true
+          },
+          "contratado": {
+            "type": "string",
+            "nullable": true
+          },
+          "anoOrcamento": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LancamentoForm": {
+        "required": [
+          "anoOrcamento",
+          "dataLancamento",
+          "descricao",
+          "lancamentoValido",
+          "valor"
+        ],
+        "type": "object",
+        "properties": {
+          "lancamentoValido": {
+            "type": "boolean"
+          },
+          "numeroLancamento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descricao": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "dataLancamento": {
+            "type": "string",
+            "format": "date"
+          },
+          "idLancamentoPai": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "valor": {
+            "minimum": 0,01,
+            "type": "number",
+            "format": "double"
+          },
+          "tipoLancamentoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unidadeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unidadeOrcamentariaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "programaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "acaoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fonteRecursoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "grupoDespesaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "modalidadeAplicacaoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "elementoDespesaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "solicitanteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "objetivoEstrategicoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tipoTransacaoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ged": {
             "type": "string",
             "nullable": true
           },

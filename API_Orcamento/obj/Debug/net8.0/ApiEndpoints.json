@@ -496,6 +496,105 @@
     ]
   },
   {
+    "ContainingType": "API_Orcamento.Rest.Controllers.LancamentoController",
+    "Method": "Cadastrar",
+    "RelativePath": "api/Lancamento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lancamentoForm",
+        "Type": "API_Orcamento.Rest.Form.LancamentoForm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.LancamentoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.LancamentoController",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/Lancamento/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.LancamentoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.LancamentoController",
+    "Method": "Atualizar",
+    "RelativePath": "api/Lancamento/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lancamentoForm",
+        "Type": "API_Orcamento.Rest.Form.LancamentoForm",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "API_Orcamento.Rest.Dto.LancamentoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API_Orcamento.Rest.Controllers.LancamentoController",
+    "Method": "Apagar",
+    "RelativePath": "api/Lancamento/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_Orcamento.Rest.Controllers.ModalidadeAplicacaoController",
     "Method": "BuscarTodos",
     "RelativePath": "api/ModalidadeAplicacao",

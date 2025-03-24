@@ -30,7 +30,7 @@ namespace API_Orcamento.Models
         [Required]
         private DateTime dataCadastro;
 
-        private DateTime dataAlteracao;
+        private DateTime? dataAlteracao;
 
         [Required]
         private int anoOrcamento;
@@ -85,7 +85,7 @@ namespace API_Orcamento.Models
         public virtual FonteRecursoModel FonteRecurso { get; set; }
 
         [ForeignKey("LancamentoModel")]
-        private int lancamentoId;
+        private int? lancamentoId;
         public virtual LancamentoModel Lancamento { get; set; }
 
 
@@ -98,7 +98,7 @@ namespace API_Orcamento.Models
         public string Contratado { get => contratado; set => contratado = value; }
         public decimal Valor { get => valor; set => valor = value; }
         public DateTime DataCadastro { get => dataCadastro; set => dataCadastro = value; }
-        public DateTime DataAlteracao { get => dataAlteracao; set => dataAlteracao = value; }
+        public DateTime? DataAlteracao { get => dataAlteracao; set => dataAlteracao = value; }
         public int AnoOrcamento { get => anoOrcamento; set => anoOrcamento = value; }
 
         public int TipoLancamentoId { get => tipoLancamentoId; set => tipoLancamentoId = value; }
@@ -113,6 +113,6 @@ namespace API_Orcamento.Models
         public int ModalidadeAplicacaoId { get => modalidadeAplicacaoId; set => modalidadeAplicacaoId = value; }
         public int TipoTransacaoId { get => tipoTransacaoId; set => tipoTransacaoId = value; }
         public int FonteRecursoId { get => fonteRecursoId; set => fonteRecursoId = value; }
-        public int LancamentoId { get => lancamentoId; set => lancamentoId = value; }
+        public int? LancamentoId { get => lancamentoId; set => lancamentoId = value; }
     }
 }

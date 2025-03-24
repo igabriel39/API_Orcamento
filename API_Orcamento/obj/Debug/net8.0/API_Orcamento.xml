@@ -88,6 +88,18 @@
         <member name="M:API_Orcamento.Migrations.dataLancamento.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:API_Orcamento.Migrations.dataAlteracaoNull">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.dataAlteracaoNull.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.dataAlteracaoNull.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.dataAlteracaoNull.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="M:API_Orcamento.Rest.Controllers.AcaoController.BuscarTodos">
             <summary>
             Lista todas as Ações

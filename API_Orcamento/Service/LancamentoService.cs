@@ -67,7 +67,8 @@ namespace API_Orcamento.Service
                 lancamentoCadastrado.DataCadastro = DateTime.Now;
 
                 lancamentoCadastrado = await _lancamentoRepository.AdicionarLancamento(lancamentoCadastrado);
-                return _mapper.Map<LancamentoDto>(lancamentoCadastrado);
+                ConsultaLancamento lancamentoCadastradoConsulta = await _lancamentoRepository.BuscarPorId(lancamentoCadastrado.Id);
+                return _mapper.Map<LancamentoDto>(lancamentoCadastradoConsulta);
             }
             catch (Exception ex)
             {
@@ -93,18 +94,18 @@ namespace API_Orcamento.Service
                     lancamentoAtualizado.DataLancamento = lancamentoForm.dataLancamento;
                     lancamentoAtualizado.LancamentoId = lancamentoForm.idLancamentoPai;
                     lancamentoAtualizado.Valor = (decimal)lancamentoForm.valor;
-                    lancamentoAtualizado.TipoLancamentoId = lancamentoForm.idTipoLancamento;
-                    lancamentoAtualizado.UnidadeId = lancamentoForm.idUnidade;
-                    lancamentoAtualizado.UnidadeOrcamentariaId = lancamentoForm.idUnidadeOrcamentaria;
-                    lancamentoAtualizado.ProgramaId = lancamentoForm.idPrograma;
-                    lancamentoAtualizado.AcaoId = lancamentoForm.idAcao;
-                    lancamentoAtualizado.FonteRecursoId = lancamentoForm.idFonteRecurso;
-                    lancamentoAtualizado.TipoLancamentoId = lancamentoForm.idTipoLancamento;
-                    lancamentoAtualizado.ModalidadeAplicacaoId = lancamentoForm.idModalidadeAplicacao;
-                    lancamentoAtualizado.ElementoDespesaId = lancamentoForm.idElementoDespesa;
-                    lancamentoAtualizado.SolicitanteId = lancamentoForm.idSolicitante;
-                    lancamentoAtualizado.ObjetivoEstrategicoId = lancamentoForm.idObjetivoEstrategico;
-                    lancamentoAtualizado.TipoTransacaoId = lancamentoForm.idTipoTransacao;
+                    lancamentoAtualizado.TipoLancamentoId = lancamentoForm.tipoLancamentoId;
+                    lancamentoAtualizado.UnidadeId = lancamentoForm.unidadeId;
+                    lancamentoAtualizado.UnidadeOrcamentariaId = lancamentoForm.unidadeOrcamentariaId;
+                    lancamentoAtualizado.ProgramaId = lancamentoForm.programaId;
+                    lancamentoAtualizado.AcaoId = lancamentoForm.acaoId;
+                    lancamentoAtualizado.FonteRecursoId = lancamentoForm.fonteRecursoId;
+                    lancamentoAtualizado.TipoLancamentoId = lancamentoForm.tipoLancamentoId;
+                    lancamentoAtualizado.ModalidadeAplicacaoId = lancamentoForm.modalidadeAplicacaoId;
+                    lancamentoAtualizado.ElementoDespesaId = lancamentoForm.elementoDespesaId;
+                    lancamentoAtualizado.SolicitanteId = lancamentoForm.solicitanteId;
+                    lancamentoAtualizado.ObjetivoEstrategicoId = lancamentoForm.objetivoEstrategicoId;
+                    lancamentoAtualizado.TipoTransacaoId = lancamentoForm.tipoTransacaoId;
                     lancamentoAtualizado.GED = lancamentoForm.ged;
                     lancamentoAtualizado.Contratado = lancamentoForm.contratado;
                     lancamentoAtualizado.AnoOrcamento = lancamentoForm.anoOrcamento;

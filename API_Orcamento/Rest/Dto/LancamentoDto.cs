@@ -23,7 +23,7 @@
         private string dsTipoTransacao;
         private string ged;
         private string contratado;
-        private short anoOrcamento;
+        private int anoOrcamento;
 
         public int Id { get => id; set => id = value; }
         public bool LancamentoValido { get => lancamentoValido; set => lancamentoValido = value; }
@@ -46,6 +46,6 @@
         public string DsTipoTransacao { get => dsTipoTransacao; set => dsTipoTransacao = value; }
         public string GED { get => ged; set => ged = value; }
         public string Contratado { get => contratado; set => contratado = value; }
-        public short AnoOrcamento { get => anoOrcamento; set => anoOrcamento = value; }
+        public int AnoOrcamento { get => anoOrcamento; set => anoOrcamento = value; }
     }
 }

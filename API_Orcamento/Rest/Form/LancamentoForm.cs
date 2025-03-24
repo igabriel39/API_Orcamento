@@ -19,21 +19,21 @@ namespace API_Orcamento.Rest.Form
         public int idLancamentoPai { get; set; }
 
         [Required(ErrorMessage = "O valor do Lançamento é obrigatório!")]
-        [Range(typeof(decimal), "0.01", "9999999", ErrorMessage = "O valor do Lançamento deve ser maior que 0.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "O valor do Lançamento deve ser maior que 0.")]
         public decimal? valor { get; set; }
 
-        public int idTipoLancamento { get; set; }
-        public int idUnidade { get; set; }
-        public int idUnidadeOrcamentaria { get; set; }
-        public int idPrograma { get; set; }
-        public int idAcao { get; set; }
-        public int idFonteRecurso { get; set; }
-        public int idGrupoDespesa { get; set; }
-        public int idModalidadeAplicacao { get; set; }
-        public int idElementoDespesa { get; set; }
-        public int idSolicitante { get; set; }
-        public int idObjetivoEstrategico { get; set; }
-        public int idTipoTransacao { get; set; }
+        public int tipoLancamentoId { get; set; }
+        public int unidadeId { get; set; }
+        public int unidadeOrcamentariaId { get; set; }
+        public int programaId { get; set; }
+        public int acaoId { get; set; }
+        public int fonteRecursoId { get; set; }
+        public int grupoDespesaId { get; set; }
+        public int modalidadeAplicacaoId { get; set; }
+        public int elementoDespesaId { get; set; }
+        public int solicitanteId { get; set; }
+        public int objetivoEstrategicoId { get; set; }
+        public int tipoTransacaoId { get; set; }
         public string ged { get; set; }
         public string contratado { get; set; }
 
