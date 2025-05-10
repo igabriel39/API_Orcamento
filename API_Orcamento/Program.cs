@@ -87,6 +87,18 @@ builder.Services.AddAuthentication("Bearer")
     });
 builder.Services.AddAuthorization();
 
+//Configuração do CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "MyPolicy",
+            policy =>
+            {
+                policy.WithOrigins("*")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+            });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -95,6 +107,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("MyPolicy");
 
 app.UseHttpsRedirection();
 
