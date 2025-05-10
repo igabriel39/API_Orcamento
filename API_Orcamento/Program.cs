@@ -1,7 +1,12 @@
+using API_Orcamento.Middlewares;
 using API_Orcamento.Models;
 using API_Orcamento.Repository;
 using API_Orcamento.Repository.Interfaces;
 using API_Orcamento.Service;
+using Keycloak.AuthServices.Authentication;
+using Keycloak.AuthServices.Authorization;
+using Keycloak.AuthServices.Authorization.Claims;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -72,6 +77,16 @@ builder.Services.AddScoped<ILancamentoRepository, LancamentoRepository>();
 builder.Services.AddScoped<LancamentoService>();
 #endregion
 
+// Inicialização da autenticação e autorização do Keycloak
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = builder.Configuration["Keycloak:Authority"];
+        options.Audience = builder.Configuration["Keycloak:resource"];
+        options.RequireHttpsMetadata = false;
+    });
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -84,6 +99,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseAuthentication();
+// Adiciona o middleware de autorização do Keycloak para validar todas as rotas e deixar centralizado
+app.UseMiddleware<KeycloakAuthorizationMiddleware>();
 
 app.MapControllers();
 
