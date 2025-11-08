@@ -31,13 +31,13 @@ namespace API_Orcamento.Middlewares
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Post, _configuration["Keycloak:TokenEndpoint"]);
             request.Content = new FormUrlEncodedContent(new Dictionary<string, string>
-        {
-            { "grant_type", "urn:ietf:params:oauth:grant-type:uma-ticket" },
-            { "audience", _configuration["Keycloak:resource"] },
-            { "permission", permission }, // Nome da rota e método HTTP para ser verificado
-            { "permission_resource_format", "uri" }, // Vai procurar a rota nas URIS cadastradas no recurso do Keycloak
-            { "response_mode", "decision" } // Indica que a resposta que quero é apenas uma decisão geral da Autorização. Está Autorizado? autorizado(200) ou não autorizado (403) 
-        });
+            {
+                { "grant_type", "urn:ietf:params:oauth:grant-type:uma-ticket" },
+                { "audience", _configuration["Keycloak:resource"] },
+                { "permission", permission }, // Nome da rota e método HTTP para ser verificado
+                { "permission_resource_format", "uri" }, // Vai procurar a rota nas URIS cadastradas no recurso do Keycloak
+                { "response_mode", "decision" } // Indica que a resposta que quero é apenas uma decisão geral da Autorização. Está Autorizado? autorizado(200) ou não autorizado (403) 
+             });
 
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
@@ -52,6 +52,8 @@ namespace API_Orcamento.Middlewares
             {
                 await _next(context);
             }
+
+            await _next(context);
         }
 
         private string GetPermissionFromRequest(HttpContext context)

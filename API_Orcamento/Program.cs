@@ -73,6 +73,9 @@ builder.Services.AddScoped<UnidadeService>();
 builder.Services.AddScoped<IUnidadeOrcamentariaRepository, UnidadeOrcamentariaRepository>();
 builder.Services.AddScoped<UnidadeOrcamentariaService>();
 
+builder.Services.AddScoped<IOrgaoRepository, OrgaoRepository>();
+builder.Services.AddScoped<OrgaoService>();
+
 builder.Services.AddScoped<ILancamentoRepository, LancamentoRepository>();
 builder.Services.AddScoped<LancamentoService>();
 #endregion
@@ -115,7 +118,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseAuthentication();
 // Adiciona o middleware de autorização do Keycloak para validar todas as rotas e deixar centralizado
-app.UseMiddleware<KeycloakAuthorizationMiddleware>();
+//app.UseMiddleware<KeycloakAuthorizationMiddleware>();
 
 app.MapControllers();
 

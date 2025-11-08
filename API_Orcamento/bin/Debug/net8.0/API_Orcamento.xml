@@ -100,6 +100,18 @@
         <member name="M:API_Orcamento.Migrations.dataAlteracaoNull.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:API_Orcamento.Migrations.tabela_de_orgaos">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.tabela_de_orgaos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.tabela_de_orgaos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:API_Orcamento.Migrations.tabela_de_orgaos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="M:API_Orcamento.Rest.Controllers.AcaoController.BuscarTodos">
             <summary>
             Lista todas as Ações
@@ -392,6 +404,48 @@
             </summary>
             <returns></returns>
             <response code = "200">Objetivo Estratégico apagado com sucesso</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.OrgaoController.BuscarTodos">
+            <summary>
+            Lista todos os Órgãos
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna os Órgãos cadastrados</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.OrgaoController.BuscarPorId(System.Int32)">
+            <summary>
+            Lista o Órgão pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Retorna o Órgão</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.OrgaoController.Cadastrar(API_Orcamento.Rest.Form.OrgaoForm)">
+            <summary>
+            Cadastra o Órgão
+            </summary>
+            <returns></returns>
+            <response code = "200">Órgão cadastrado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.OrgaoController.Atualizar(API_Orcamento.Rest.Form.OrgaoForm,System.Int32)">
+            <summary>
+            Atualiza o Órgão pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Órgão atualizado com sucesso</response>>
+            <response code = "400">Requisição enviada inválida</response>>
+            <response code = "500">Erro Interno no Servidor</response>>
+        </member>
+        <member name="M:API_Orcamento.Rest.Controllers.OrgaoController.Apagar(System.Int32)">
+            <summary>
+            Apaga o Órgão pelo id informado
+            </summary>
+            <returns></returns>
+            <response code = "200">Órgão apagado com sucesso</response>>
             <response code = "500">Erro Interno no Servidor</response>>
         </member>
         <member name="M:API_Orcamento.Rest.Controllers.ProgramaController.BuscarTodos">

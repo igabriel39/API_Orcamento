@@ -24,6 +24,7 @@ namespace API_Orcamento.Models
         public DbSet<ModalidadeAplicacaoModel> tbModalidadeAplicacao { get; set; }
         public DbSet<ElementoDespesaModel> tbElementoDespesa { get; set; }
         public DbSet<TipoTransacaoModel> tbTipoTransacao { get; set; }
+        public DbSet<OrgaoModel> tbOrgao { get; set; }
         public DbSet<LancamentoModel> tbLancamentos { get; set; }
     }
 }
